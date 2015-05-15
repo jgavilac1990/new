@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="soc201">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+	<style>
+
+		.act1{
+			margin-top: 6px;
+		}
+
+	</style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="soc" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<show-concepts-text 
+			options="data"
+			instruction="Haz clic sobre cada recuadro y aprende más sobre la vivienda."
+			description="La vivienda es aquel lugar cerrado y cubierto construido para ser habitado por las personas. Sus principales funciones son proporcionar."
+			title="¿Sabes qué es la vivienda?"
+			audio="c1"
+			mainimg="vivienda.png">
+		</show-concepts-text>
+	</script>
+
+	<script type="text/ng-template" id="con2">
+		<click-images 
+			img="arquitecto"
+			alt="Un arquitecto mostrando algunos tipos de vivienda"
+			options="data"
+			description="El clima y las costumbres del ser humano condicionan la forma y los materiales para la construcción de la vivienda. Por ejemplo, en lugares donde los climas son cálidos, las viviendas deben estar construidas de un material que permita aislar el calor y den la sensación de ser más fresca, por eso generalmente utilizan paja para la construcción de los techos."
+			instruction="Haz clic sobre cada recuadro y conoce algunos tipos de vivienda."
+			audio="c2">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="act1">
+		<click-images 
+			items-per-row="3"
+			options="data"
+			watch="true"
+			instruction="Observa con atención los siguientes tipos de vivienda, haz clic sobre cada una de ellas y pronuncia en voz alta su nombre."
+			audio="a1">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="act2">
+		<differences
+			audio="a2"
+			description="Observa las siguientes imágenes y escribe en cada recuadro en blanco una diferencia que identifiques entre las viviendas y el medio que las rodea"
+			options="data">
+		</differences>
+	</script>
+
+	<script type="text/ng-template" id="act3">
+		<pairs 
+			audio="a3"
+			options="options" 
+			description="Arrastra cada tipo de vivienda hacia las personas que de acuerdo a sus características la habitan.">
+			<item>
+				<img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + src1 + '.png', alt: alt1 }" >
+			</item>
+			<target>
+				<img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + src2 + '.png', alt: alt2 }" >
+			</target>
+		</pairs>
+	</script>
+
+	
+
+	<script type="text/ng-template" id="act4">
+		<drop-image-sample
+			audio="a4"
+			options="data"
+			description="Arrastra hacia la casa cada una de las partes que la conforman.">
+		</drop-image-sample>
+	</script>
+
+	<script type="text/ng-template" id="act5">
+		<one-group 
+			audio="a5"
+			title="Elementos vivienda"
+			options="data"
+			description="Analiza con la ayuda de tus padres tu casa y luego arrastra hasta el recuadro los elementos que la conforman.">
+		</one-group>
+	</script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

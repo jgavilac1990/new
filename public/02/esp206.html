@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="esp206">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css"> 
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="esp" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<show-hover-words
+			options="data"
+			title="¿Qué son los sustantivos?"
+			instruction="Desliza el mouse sobre las oraciones y descubre el sustantivo en cada una de ellas."
+			description="Los sustantivos hacen parte de la oración, son las palabras que utilizamos para nombrar a personas, animales, plantas y objetos materiales o inmateriales. Los sustantivos también son llamados nombres. A continuación te presentamos algunos ejemplos."
+			audio="D6">
+
+		</show-hover-words>
+    </script>
+
+    <script type="text/ng-template" id="con1_2">
+		<show-hover-words
+			options="data"
+			instruction="Desliza el mouse sobre las oraciones y descubre el sustantivo en cada una de ellas."
+			audio="D7">
+
+		</show-hover-words>
+    </script>
+
+    <script type="text/ng-template" id="con2">
+		<show-hover-words
+			options="data"
+			title="Los sustantivos propios"
+			instruction="Desliza el mouse sobre las oraciones y descubre el sustantivo propio en cada una de ellas."
+			description="Son los nombres asignados a personas, animales o cosas especificas. Se escriben siempre con mayúscula en su primera letra. También son sustantivos propios los nombres de establecimientos, títulos, ríos, países o ciudades. Analiza los siguientes ejemplos:"
+			audio="D8">
+
+		</show-hover-words>
+    </script>
+
+    <script type="text/ng-template" id="con2_2">
+		<show-hover-words
+			options="data"
+			instruction="Desliza el mouse sobre las oraciones y descubre el sustantivo propio en cada una de ellas."
+			audio="D9">
+		</show-hover-words>
+    </script>
+
+    <script type="text/ng-template" id="con3">
+		<show-hover-words
+			options="data"
+			title="Los sustantivos comunes"
+			instruction="Desliza el mouse sobre las oraciones y descubre el sustantivo común en cada una de ellas."
+			description="Son aquellos que nombran a personas, animales, objetos o ideas en forma general. Estos sustantivos deben escribirse con minúscula. Observa los ejemplos que se presentan a continuación."
+			audio="D10">
+
+		</show-hover-words>
+    </script>
+
+    <script type="text/ng-template" id="act1">
+        <radio-questions
+            options="data"
+            audio="D11"
+            description="Indica si los sustantivos que se presentan a continuación son comunes o propios.">
+        </radio-questions>
+    </script>
+
+    <script type="text/ng-template" id="act1_2">
+        <radio-questions
+            options="data"
+            audio="D12"
+            description="Indica si los sustantivos que se presentan a continuación son comunes o propios.">
+        </radio-questions>
+    </script>
+
+    <script type="text/ng-template" id="act2">
+		<text1
+			description-top="Lee atentamente el texto que se presenta a continuación, ten en cuenta que las palabras en negrita son sustantivos propios o comunes."
+			title="Mi familia"
+			description="Mi papá se llama <strong style='color:#000;font-weight:bold'>Oscar</strong> y le gusta arreglar el jardín, por eso mi casa está llena de <strong style='color:#000;font-weight:bold'>girasoles</strong> y <strong style='color:#000;font-weight:bold'>rosas</strong>, mi mamá se llama <strong style='color:#000;'>Luz Elena</strong> y le gustan los <strong style='color:#000;font-weight:bold'>perros</strong>, mi <strong style='color:#000;font-weight:bold'>hermana</strong> tiene 10 años y le encanta salir de paseo en <strong style='color:#000;font-weight:bold'>carro</strong> y yo me llamo <strong style='color:#000;font-weight:bold'>Sofía</strong> soy alegre y cariñosa, me gustan los <strong style='color:#000;font-weight:bold'>gatos</strong> y tengo una que se llama <strong style='color:#000;font-weight:bold'>Lula</strong>."
+			img="familia-en-el-campo.png"
+			titlemain="Imagen donde se muestra una familia disfrutando del campo con su mascota (perro)" audio="D13">
+		</text1>
+	</script>
+
+	<script type="text/ng-template" id="act2_2">
+		<complete-table-with-list
+			options="data"
+			instruction="Clasifica en sustantivos comunes y propios, los sustantivos resaltados en el texto anterior y luego escríbelos en la tabla."
+			audio="D14">
+
+		</complete-table-with-list>
+	</script>
+
+	<script type="text/ng-template" id="act3">
+        <radio-questions
+            options="data"
+            audio="D15"
+            description="Selecciona las respuestas correctas para las siguientes preguntas.">
+        </radio-questions>
+    </script>
+
+    <script type="text/ng-template" id="act4">
+		<complete-table-with-list
+			options="data"
+			instruction="Clasifica los siguientes sustantivos propios en la tabla."
+			audio="D16">
+
+		</complete-table-with-list>
+	</script>
+
+	<script type="text/ng-template" id="act5">
+		<group-complete-words options="options" audio="D17" description="Completa el texto con los sustantivos propios y comunes que se presentan a continuación." title-block="Palabras">  </group-complete-words>		
+	</script>
+
+	<script type="text/ng-template" id="act6">
+		<complete-table-inputs
+			options="data"
+			instruction="Completa la siguiente tabla con los sustantivos propios indicados y luego comparte tus respuestas con el facilitador."
+			audio="D18">
+
+		</complete-table-inputs>
+	</script>
+
+	<script type="text/ng-template" id="act7">
+		<complementary  options="options" audio="D20" description="Haz clic sobre cada uno de los libros y visitarás algunas páginas web en las que podrás repasar los contenidos vistos en esta lección."></complementary>	
+	</script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="soc204">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+	<style>
+
+		.a5-table {
+			width: 100%;
+		}
+
+		.a5-table th {
+			color: #fff;
+			font-size: 21px;
+			padding: 9px 4px;
+		}
+
+		.a5-table input[type="text"] {
+			width: 100%;
+			font-size: 23px;
+			padding: 5px 7px;
+		}
+
+
+	</style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="soc" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<zoom 
+			options="data"
+			description="Colombia está conformada por 32 departamentos y Bogotá  Distrito Capital. Los departamentos se dividen en municipios, también se distinguen las provincias que son un conjunto de municipios agrupados por características geográficas o históricas comunes."
+			instruction="Haz clic sobre el mapa  y conocerás mejor la división política de nuestro país."
+			title="Colombia y su división política"
+			img="mapa_sm.png"
+			big-img="mapa_bg.png"
+			alt="mapa de Colombia dividido en sus 32 departamentos"
+			audio="c1">
+		</zoom>
+	</script>
+
+	<script type="text/ng-template" id="con2">
+		<two-frames-description 
+			options="data"
+			title="Departamentos representativos"
+			description="Recuerda que nuestro país está conformado por 32 departamentos y Bogotá Distrito Capital, a continuación te presentamos algunos, y te invitamos a consultar los otros."
+			audio="c2">
+		</two-frames-description>
+	</script>
+
+	<script type="text/ng-template" id="act1_1">
+		<click-and-listen 
+			options="data"
+			description="Haz clic sobre cada departamento, escucha atentamente el nombre de su capital y repite en voz alta."
+			audio="a1">
+		</click-and-listen>
+	</script>
+
+	<script type="text/ng-template" id="act1_2">
+		<click-and-listen 
+			options="data"
+			description="Haz clic sobre cada departamento, escucha atentamente el nombre de su capital y repite en voz alta."
+			audio="a1">
+		</click-and-listen>
+	</script>
+
+	<script type="text/ng-template" id="act1_3">
+		<click-and-listen 
+			options="data"
+			description="Haz clic sobre cada departamento, escucha atentamente el nombre de su capital y repite en voz alta."
+			audio="a1">
+		</click-and-listen>
+	</script>
+
+	<script type="text/ng-template" id="act1_4">
+		<click-and-listen 
+			options="data"
+			description="Haz clic sobre cada departamento, escucha atentamente el nombre de su capital y repite en voz alta."
+			audio="a1">
+		</click-and-listen>
+	</script>
+
+	<script type="text/ng-template" id="act2">
+		<image-map-select 
+			options="data"
+			description="Haz clic sobre cada departamento y luego selecciona en el mapa de Colombia donde está ubicado."
+			audio="a2">
+		</image-map-select>
+	</script>
+
+	<script type="text/ng-template" id="act3">
+		<image-map-select 
+			options="data"
+			description="Haz clic sobre cada capital y luego selecciona en el mapa de Colombia el recuadro que señala el departamento del cual es capital."
+			audio="a3">
+		</image-map-select>
+	</script>
+
+	<script type="text/ng-template" id="act4">
+		<drop-image-sample
+			audio="a4"
+			options="data"
+			description="Cada departamento tiene características que lo identifican, observa las imágenes y arrástralas hacia el departamento correspondiente.">
+		</drop-image-sample>
+	</script>
+
+	<script type="text/ng-template" id="act5">
+		<transclusion 
+			audio="a5"
+			description="Con la ayuda de tus padres investiga y escribe en el recuadro en blanco las principales actividades económicas que se desarrollan en la ciudad donde vives, luego comparte tu respuesta con el facilitador y tus compañeros."
+			<!--INICIO-->
+
+			<table class="a5-table bg-1">
+				<tr>
+					<th>Departamento</th>
+					<th>Características</th>
+				</tr>
+				<tr ng-repeat="input in inputs">
+					<td class="bd-1">
+						<input type="text" ng-model="input.left">
+					</td>
+					<td>
+						<input type="text" ng-model="input.right">
+					</td>
+				</tr>
+			</table>
+
+			<!-- CALIFICATIONS -->
+			<div ng-show="success"> <div data-congratulations></div></div>
+			<div ng-show="failure"> <div data-failure></div> </div>
+			<!--FIN-->
+		</transclusion>
+	</script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

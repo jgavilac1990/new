@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="nat201">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+	<style>
+
+.more-height{
+	max-height: 400px !important;
+}
+
+	</style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="nat" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<show-concepts-text 
+			options="data"
+			instruction="Haz clic sobre cada número y aprende más sobre hábitos saludables."
+			description="Para mantenernos saludables debemos adoptar los siguientes hábitos:"
+			title=""
+			noplay="true"
+			audio="D6">
+		</show-concepts-text>
+	</script>
+
+	<script type="text/ng-template" id="act1">
+		<select-options-img 
+			options="data" 
+			instruction="Observa cada imagen, haz clic sobre el recuadro en blanco y escribe con que hábito de vida esta relacionada." 
+			audio="D14">
+		</select-options-img>
+	</script>
+
+	<script type="text/ng-template" id="act2">
+		<complete-inputs-description options="data" instruction="Observa cada imagen, haz clic sobre el recuadro en blanco y escribe CORRESPONDE o NO CORRESPONDE a un hábito de vida saludable." audio="D15"></complete-inputs-description>
+	</script>
+
+	<script type="text/ng-template" id="act3">
+		<transclusion 
+			audio="D16"
+			description="Escribe al frente de cada hábito de vida saludable, lo que te puede llegar a pasar si no cumples con este hábito.">
+			<!--INICIO-->
+
+			<table class="table-primary" style="width: 100%;">
+				<tr>
+					<th>Hábito de vida saludable</th>
+					<th>Consecuencias</th>
+				</tr>
+				<tr ng-repeat="item in items">
+					<td>{{ item.text }}</td>
+					<td style="padding: 0px;">
+						<input type="text" ng-model="item.input" style="width: 100%; border: none; outline: none; padding: 7px;">
+					</td>
+				</tr>
+			</table>
+
+			<!-- CALIFICATIONS -->
+			<div ng-show="success"> <div data-congratulations></div></div>
+			<div ng-show="failure"> <div data-failure></div> </div>
+			<!--FIN-->
+		</transclusion>
+	</script>
+
+	<script type="text/ng-template" id="act4">
+		<letter-soup
+			options="data"
+			description="Busca en la sopa de letras los siguientes términos relacionados con hábitos de vida saludable. Para seleccionar las palabras en la sopa de letas debes hacer clic en la primera y última letra de la palabra."
+			audio="D17">
+
+		</letter-soup>
+	</script>
+
+	<script type="text/ng-template" id="act5">
+		<transclusion 
+			audio="D18"
+			description="Haz clic sobre el recuadro y escribe un texto de diez renglones donde des a conocer la importancia de los hábitos de vida saludable.">
+			<!--INICIO-->
+			<textarea class="bd-1" rows="10" cols="80" ng-model="$parent.textarea"
+				style="resize: none; outline: none; padding: 9px 10px; font-size: 22px; border: 3px solid; display: block; margin: 0 auto;">
+			</textarea>
+
+			<!-- CALIFICATIONS -->
+			<div ng-show="success"> <div data-congratulations></div></div>
+			<div ng-show="failure"> <div data-failure></div> </div>
+			<!--FIN-->
+		</transclusion>
+	</script>
+
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

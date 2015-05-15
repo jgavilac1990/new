@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="esp210">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+    <style>
+
+    </style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="esp" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="comp">
+		<competences-new 
+			options="data"	
+		></competences-new>
+	</script>
+
+    <script type="text/ng-template" id="con1">
+        <click-images 
+            options="data"
+            instruction="Haz clic sobre las imágenes y reconoce algunos ejemplos."
+            description="Las imágenes son una representación visual de un objeto, una persona, un animal, una situación o cualquier otra cosa que pueda ser vista a través del ojo humano.<br><br>Los objetos o situaciones representadas en las imágenes pueden ser reales o ficticias, miremos algunos ejemplos para comprender mejor estos conceptos."
+            audio="C1">
+        ></click-images>
+    </script>
+
+    <script type="text/ng-template" id="con2">
+        <show-name 
+            options="data"
+            description="Mediante las imágenes podemos comunicarnos e informarnos. Gracias a ellas podemos emitir  y recibir mensajes mediante el sentido de la vista. Analicemos algunos ejemplos."
+            instruction="Haz clic sobre las imágenes y descubre el mensaje que transmiten."
+            audio="C2"></show-name>
+    </script>
+
+    <script type="text/ng-template" id="act1">
+        <pairs options="options" audio="A1" description="Arrastra el término hacia la imagen con la cual guarda relación."custom-class='' >
+            <item>
+                <h1 data-bind="html: sil"></h1>
+            </item>
+            <target>
+                <img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + resource , alt: alt , title: title}" >
+            </target>
+        </pairs>
+    </script>
+
+    <script type="text/ng-template" id="act2">
+        <radio-questions
+            options="data"
+            audio="A2"
+            description="Analiza la imagen y luego selecciona el enunciado que mejor la describa.">
+        </radio-questions>
+    </script>
+
+    <script type="text/ng-template" id="act2-2">
+        <radio-questions
+            options="data"
+            audio="A2-2"
+            description="Analiza la imagen y luego selecciona el enunciado que mejor la describa.">
+        </radio-questions>
+    </script>
+
+    <script type="text/ng-template" id="act2-3">
+        <radio-questions
+            options="data"
+            audio="A2-3"
+            description="Analiza la imagen y luego selecciona el enunciado que mejor la describa.">
+        </radio-questions>
+    </script>
+
+    <script type="text/ng-template" id="act3">
+        <radio-questions
+            options="data"
+            audio="A3"
+            description="Analiza la siguiente secuencia de imágenes y luego selecciona el enunciado que mejor resuma la historia presentada en las imágenes.">
+        </radio-questions>
+    </script>
+
+    <script type="text/ng-template" id="act3-2">
+        <radio-questions
+            options="data"
+            audio="A3-2"
+            description="Analiza la siguiente secuencia de imágenes y luego selecciona el enunciado que mejor resuma la historia presentada en las imágenes.">
+        </radio-questions>
+    </script>
+
+    <script type="text/ng-template" id="act4">
+        <select-options-positions options="options" audio="A4" description=" Observa las siguientes imágenes e  indica que te informa cada una de ellas."  </select-options-positions>
+    </script>
+
+    <script type="text/ng-template" id="act5">
+        <transclusion
+                audio="A5"
+                arrow="true"
+                description="Selecciona la imagen que para ti represente alegría, explica por qué en el recuadro y luego comparte tus respuestas con el facilitador.">
+            <!--INICIO-->
+           <div  style="width: 70%;float: left;margin-left: 170px;"> 
+                <div ng-repeat="item in $parent.items" class="" style="margin: 10px  0 6px 10px;width: 30%;float: left;position: relative;" ng-click="$parent.selectItem(item)"> 
+                    <div class="bd-1 {{ item === $parent.selectedItem ? 'item-is-selected' : '' }}" style="float:left;margin: 10px;border: 3px solid; margin: 0 6px;cursor: pointer;">
+                        <img class="img-responsive" style="display: inline-block; width: 100%;" 
+                            src="{{ $root.resources + '/' + item.src + '.jpg' }}" alt="{{ item.alt }}" title="{{ item.title }}">
+                    </div>
+                </div>
+            </div>
+            <textarea  ng-model="$parent.input" class="bd-1" style="width: 95%;height: 150px; font-size: 24px; padding: 5px 26px; border: 2px solid;margin-left: 25px;float: left;margin-top: 10px;"/>
+
+            <!-- CALIFICATIONS -->
+            <div ng-show="success"> <div data-congratulations></div></div>
+            <div ng-show="failure"> <div data-failure></div> </div>
+            <!--FIN-->
+        </transclusion>
+    </script>
+
+    <script type="text/ng-template" id="act6">
+        <complementary  options="options" audio="A6" description="Haz clic sobre el libro y visitarás una página web en la que podrás poner en práctica los conocimientos adquiridos en esta lección."></complementary>    
+    </script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="soc203">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="soc" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<image-map-description 
+			options="data"
+			title="¿Qué es el relieve?"
+			instruction="Haz clic sobre cada recuadro y descubre las principales formas del relieve."
+			description="El relieve se refiere en  geografía a las formas variadas que presenta la superficie de la tierra. Los relieves van cambiando, aunque estos cambios sólo se ven después de un cierto tiempo, pues son muy lentos, salvo cuando se producen terremotos o erupciones volcánicas."
+			audio="c1">
+		</image-map-description>
+	</script>
+
+	<script type="text/ng-template" id="con2">
+		<show-concepts-text 
+			options="data"
+			instruction="Haz clic sobre cada recuadro y aprende más sobre otras formas de relieve."
+			description="También podemos encontrar otras formas de relieve, como por ejemplo: golfo, cañón, isla y archipiélago, entre otros."
+			audio="c2"
+			mainimg="personaje-de-excursion.png">
+		</show-concepts-text>
+	</script>
+
+	<script type="text/ng-template" id="act1">
+		<compare-sounds
+			options="data"
+			audio="a1"
+			description="Haz clic sobre el ícono de sonido y luego selecciona la imagen relacionada con él.">
+		</compare-sounds>
+	</script>
+
+	<script type="text/ng-template" id="act2">
+		<puzzle4 
+			options="data"
+			audio="a2"
+			description="Arrastra el nombre de cada forma del relieve hacia su lugar correcto en la imagen.">
+		</puzzle4>
+	</script>
+
+	<script type="text/ng-template" id="act3">
+		<one-group 
+			options="data" 
+			audio="a3"
+			description="Arrastra hacia el recuadro las formas del relieve."
+			title="Formas del relieve">
+		</one-group>
+	</script>
+
+	<script type="text/ng-template" id="act4">
+		<crossword 
+			options="data" 
+			description="Completa el siguiente crucigrama de formas del relieve, siguiendo las pistas."
+			audio="a4">
+		</crossword>	
+	</script>
+
+	<script type="text/ng-template" id="act5">
+		<pairs 
+			audio="a5"
+			options="options" 
+			description="Lee cada enunciado en compañía de tus padres y arrastra cada imagen hacia el enunciado correspondiente.">
+			<item>
+				<img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + src + '.jpg', alt: alt, title: title }" >
+			</item>
+			<target>
+				<p class="center-all" style="min-height: 200px; padding: 0px 13px; position: relative;" data-bind="text: text"></p>
+			</target>
+            <item-target>
+                <img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + src + '.jpg', alt: alt, title: title }"
+                        style="position: absolute; top: -140px; margin: auto; left: 0; right: 0; z-index: 10 !important;">
+            </item-target>
+		</pairs>
+	</script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

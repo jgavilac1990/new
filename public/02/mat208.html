@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="mat208">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+	<style>
+
+	.more-height{
+		max-height: 400px !important;
+	}
+
+	</style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="mat" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<transclusion 
+			audio="D6"
+			description=" El peso son unidades de medida utilizadas para establecer la cantidad de masa que  tiene un objeto."
+			title="¿Qué  es el peso?">
+			<!--INICIO-->
+			<div style="width: 40%; height:50%; display: block;  float: left;">
+			    <img class="img-responsive" style="display: inline-block; cursor: pointer;" ng-click="activateNext()" play="audio-1" on="click" 
+					src="{{ $root.resources + '/joven-con-balzanzas.png' }}" alt="2 por 3 es igual 6. Es decir, dos más dos más dos es igual a 6.">
+			</div>
+			<div style=" padding: -320px; display: block; margin-left: auto;">
+                        <H4 style="font-weight: bold; FONT-SIZE: 23px; margin-left:400px;">¿Qué son unidades de masa?</H4>
+                        <p style="font-weight: bold; DECORATION: none ; TEXT-ALIGN:justify; FONT-SIZE: 20px;">La masa es la cantidad de materia que contiene un cuerpo, todo lo que vemos es llamado «masa» y  también algunas cosas que no vemos tal como el aire.La masa se puede medir,  por ello es una magnitud, la principal unidad de medida de la masa es el <b style="color:#BD0926;">Gramo y el Kilogramo</b>.</p>
+			</div>
+
+			<!--audio element-->
+			<audio id="audio-1" preload="auto">
+				<source src="{{ $root.resources + '/D6.mp3' }}" type="audio/mpeg">
+			</audio>
+			<!--FIN-->
+
+		</transclusion>
+
+	</script>
+	<script type="text/ng-template" id="con2">
+        <click-images  
+            description = "Los instrumentos más utilizados para descubrir la masa que contienen  diferentes objetos son: "           
+            options = "data"           
+            instruction = "Haz clic sobre la imagen y escucha."
+            audio = "D7">
+        </click-images>
+    </script>
+	<script type="text/ng-template" id="act1">
+		<show-concepts-img 
+			options="data"
+			description="Haz clic sobre el ícono de sonido  y observa el elemento  que  tiene mayor peso. "
+			mainimg="bombon.png"
+			mainalt="Dulce de color  verde."
+			img="queso.png"
+			alt="Queso"
+			audio="act1">
+		</show-concepts-img>
+	</script>
+
+	<script type="text/ng-template" id="act1-1">
+		<show-concepts-img 
+			options="data"
+			description="Haz clic sobre el ícono de sonido  y observa el elemento  que  tiene mayor peso. "
+			mainimg="fresa.png"
+			mainalt="Fresa"
+			img="plato.png"
+			alt="Plato café, en su interior hay una ensalada."
+			audio="act1">
+		</show-concepts-img>
+	</script>
+	<script type="text/ng-template" id="act1-2">
+		<show-concepts-img 
+			options="data"
+			description="Haz clic sobre el ícono de sonido  y observa el elemento  que  tiene mayor peso. "
+			mainimg="pelota.png"
+			mainalt="Pelota de varios colores "
+			img="pollo.png"
+			alt="Pollo."
+			audio="act1">
+		</show-concepts-img>
+	</script>
+	<script type="text/ng-template" id="act1-3">
+		<show-concepts-img 
+			options="data"
+			description="Haz clic sobre el ícono de sonido  y observa el elemento  que  tiene mayor peso. "
+			mainimg="lapiz.png"
+			mainalt="Lápiz  amarillo"
+			img="carne.png"
+			alt="Tozo de carne sobre un plato."
+			audio="act1">
+		</show-concepts-img>
+	</script>
+	<script type="text/ng-template" id="act1-4">
+		<show-concepts-img 
+			options="data"
+			description="Haz clic sobre el ícono de sonido  y observa el elemento  que  tiene mayor peso. "
+			mainimg="cereza.png"
+			mainalt="Una cereza de color rojo."
+			img="martillo.png"
+			alt="Martillo"
+			audio="act1">
+		</show-concepts-img>
+	</script>
+
+	<script type="text/ng-template" id="act1-5">
+		<show-concepts-img 
+			options="data"
+			description="Haz clic sobre el ícono de sonido  y observa el elemento  que  tiene mayor peso. "
+			mainimg="anillo.png"
+			mainalt="Anillo"
+			img="libro.png"
+			alt="Libro de color amarillo."
+			audio="act1">
+		</show-concepts-img>
+	</script>
+
+  
+   <script type="text/ng-template" id="act2">
+  	<drag-to-mat
+    	audio="act3"
+    	options="data"
+    	description="Haz clic  sobre el botón  que indica  más peso, menos peso, o igual peso de los dos elementos.">
+  	</drag-to-mat>
+	</script>
+
+	<script type="text/ng-template" id="act2-1">
+  	<drag-to-mat
+    	audio="act3"
+    	options="data"
+    	description="Haz clic  sobre el botón  que indica  más peso, menos peso, o igual peso de los dos elementos ">
+  	</drag-to-mat>
+	</script>
+
+	<script type="text/ng-template" id="act2-2">
+  	<drag-to-mat
+    	audio="act3"
+    	options="data"
+    	description="Haz clic  sobre el botón  que indica  más peso, menos peso, o igual peso de los dos elementos ">
+  	</drag-to-mat>
+	</script>
+
+	<script type="text/ng-template" id="act2-3">
+  	<drag-to-mat
+    	audio="act3"
+    	options="data"
+    	description="Haz clic  sobre el botón  que indica  más peso, menos peso, o igual peso de los dos elementos ">
+  	</drag-to-mat>
+	</script>
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+	<script src="../scripts/jquery.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

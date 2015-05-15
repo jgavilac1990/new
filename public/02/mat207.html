@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="mat207">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+	<style>
+
+	.more-height{
+		max-height: 400px !important;
+	}
+
+	</style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="mat" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<transclusion 
+			instruction="Haz clic sobre el recuadro y escucha."
+			audio="D6"
+			description="El tiempo es una secuencia o cadena de eventos que siempre ocurren. El tiempo se divide en pasado, presente y futuro
+                Para medir el tiempo usamos:  segundos, minutos, horas, días, semanas, meses y años."
+			title="¿Qué  son las medidas de tiempo?">
+			<!--INICIO-->
+			<div style="width: 50%; height:50%; display: block; margin-left: auto; margin-right: auto">
+			    <img class="img-responsive" style="display: inline-block; cursor: pointer;" ng-click="activateNext()" play="audio-1" on="click" 
+					src="{{ $root.resources + '/home.png' }}" alt="2 por 3 es igual 6. Es decir, dos más dos más dos es igual a 6.">
+			</div>
+
+			<!--audio element-->
+			<audio id="audio-1" preload="auto">
+				<source src="{{ $root.resources + '/D6.mp3' }}" type="audio/mpeg">
+			</audio>
+			<!--FIN-->
+
+		</transclusion>
+
+	</script>
+	<script type="text/ng-template" id="con2">
+		<transclusions 
+			instruction="Haz clic sobre el recuadro y escucha."
+			audio="D7"
+			description="El reloj permite medir el tiempo y lo segmenta en unidades clasificadas en horas, minutos y segundos."
+			title="Los relojes son instrumentos para medir el tiempo.">
+			<!--INICIO-->
+			<div style="width: 50%; height:50%; display: block; margin-left: auto; margin-right: auto">
+			    <img class="img-responsive" style="display: inline-block; cursor: pointer;" ng-click="activateNext()" play="audio-1" on="click" 
+					src="{{ $root.resources + '/relojdp.png' }}" alt="2 por 3 es igual 6. Es decir, dos más dos más dos es igual a 6.">
+			</div>
+
+			<!--audio element-->
+			<audio id="audio-1" preload="auto">
+				<source src="{{ $root.resources + '/D7.mp3' }}" type="audio/mpeg">
+			</audio>
+			<!--FIN-->
+
+		</transclusions>
+
+	</script>
+
+	<script type="text/ng-template" id="con3">
+		<transclusion 
+			instruction="Haz clic en el reloj"
+			audio="D8"
+			title="Reloj">
+			<!--INICIO-->
+			<div  style="width: 60%; display: block; margin-left: auto; margin-right: auto">
+				<img data-toggle="modal" href="#myModal" class="img-responsive" style="display: inline-block; cursor: pointer;" ng-click="activateNext()" play="audio-1" on="click" 
+					src="{{ $root.resources + '/agujas-del-reloj.png' }}" alt="Reloj rojo  sobre cuatro filas de colores que explican como se divide el tiempo.">
+			</div>
+
+			<!--audio element-->
+			<audio id="audio-1" preload="auto">
+				<source src="{{ $root.resources + '/D8.mp3' }}" type="audio/mpeg">
+			</audio>
+			<!--FIN-->
+
+		</transclusion>
+
+	</script>
+
+    <script type="text/ng-template" id="act1">
+		<sound-groups
+			options="data"
+			audio="act1"
+			instruction="Haz clic sobre el recuadro y escucha."
+			description="Haz clic en el ícono de sonido, observa la imagen y escucha que hora es.">
+		</sound-groups>
+	</script>
+	<script type="text/ng-template" id="act1-1">
+		<sound-groups
+			options="data"
+			audio="act1"
+			description="Haz clic en el ícono de sonido, observa la imagen y escucha que hora es.">
+		</sound-groups>
+	</script>
+	<script type="text/ng-template" id="act1-2">
+		<sound-groups
+			options="data"
+			audio="act1"
+			description="Haz clic en el ícono de sonido, observa la imagen y escucha que hora es.">
+		</sound-groups>
+	</script>
+	<script type="text/ng-template" id="act1-3">
+		<sound-groups
+			options="data"
+			audio="act1"
+			description="Haz clic en el ícono de sonido, observa la imagen y escucha que hora es.">
+		</sound-groups>
+	</script>
+	<script type="text/ng-template" id="act1-4">
+		<sound-groups
+			options="data"
+			audio="act1"
+			description="Haz clic en el ícono de sonido, observa la imagen y escucha que hora es.">
+		</sound-groups>
+	</script>
+
+
+	<script type="text/ng-template" id="act2">
+	  <replace-with-inputs
+	    audio="act2"
+	    options="data"
+	    description="Escribe en el cuadro de texto la hora que te indica el reloj.">
+	  </replace-with-inputs>
+	</script>
+
+	<script type="text/ng-template" id="act2-1">
+	  <replace-with-inputs
+	    audio="act2"
+	    options="data"
+	    description="Escribe en el cuadro de texto la hora que te indica el reloj.">
+	  </replace-with-inputs>
+	</script>
+	<script type="text/ng-template" id="act2-2">
+	  <replace-with-inputs
+	    audio="act2"
+	    options="data"
+	    description="Escribe en el cuadro de texto la hora que te indica el reloj.">
+	  </replace-with-inputs>
+	</script>
+	<script type="text/ng-template" id="act2-3">
+	  <replace-with-inputs
+	    audio="act2"
+	    options="data"
+	    description="Escribe en el cuadro de texto la hora que te indica el reloj.">
+	  </replace-with-inputs>
+	</script>
+	<script type="text/ng-template" id="act2-4">
+	  <replace-with-inputs
+	    audio="act2"
+	    options="data"
+	    description="Escribe en el cuadro de texto la hora que te indica el reloj.">
+	  </replace-with-inputs>
+	</script>
+	<script type="text/ng-template" id="act2-5">
+	  <replace-with-inputs
+	    audio="act2"
+	    options="data"
+	    description="Escribe en el cuadro de texto la hora que te indica el reloj.">
+	  </replace-with-inputs>
+	</script>
+	<script type="text/ng-template" id="act4">
+	  <replace-with-inputs
+	    audio="act421"
+	    options="data"
+	    description="Marca falso(f) o verdadero(v) después de resolver las siguientes situaciones. ">
+	  </replace-with-inputs>
+	</script>
+	<script type="text/ng-template" id="act4-1">
+	  <replace-with-inputs
+	    audio="act422"
+	    options="data"
+	    description="Marca en el cuadrado falso(f) o verdadero(v) después de resolver las siguientes situaciones.">
+	  </replace-with-inputs>
+	</script>
+	<script type="text/ng-template" id="act4-2">
+	  <replace-with-inputs
+	    audio="act423"
+	    options="data"
+	    description="Marca en el cuadrado falso(f) o verdadero(v) después de resolver las siguientes situaciones.">
+	  </replace-with-inputs>
+	</script>
+	<script type="text/ng-template" id="act4-3">
+	  <replace-with-inputs
+	    audio="act424"
+	    options="data"
+	    description="Marca en el cuadrado falso(f) o verdadero(v) después de resolver las siguientes situaciones.">
+	  </replace-with-inputs>
+	</script>
+	<script type="text/ng-template" id="act4-4">
+	  <replace-with-inputs
+	    audio="act425"
+	    options="data"
+	    description="Marca en el cuadrado falso(f) o verdadero(v) después de resolver las siguientes situaciones.">
+	  </replace-with-inputs>
+	</script>
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+	<script src="../scripts/jquery.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

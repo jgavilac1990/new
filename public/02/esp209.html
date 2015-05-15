@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="esp209">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+    <style>
+
+    </style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="esp" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="comp">
+		<competences-new 
+			options="data"	
+		></competences-new>
+	</script>
+
+    <script type="text/ng-template" id="con1">
+        <text1
+        block=true
+            titletop="¿Qué es la comunicación?"
+            description="La comunicación es el proceso mediante el cual las personas transmiten y reciben información.<br><br>Así mismo, la comunicación permite el intercambio de sentimientos, opiniones o cualquier información mediante el habla, la escritura u otro tipo de señales."
+            img="nina.png"
+            alt="Niña preguntándose : ¿qué es la comunicación?" audio="C1">
+        </text1>
+    </script>
+
+    <script type="text/ng-template" id="con2">
+        <show-images-block-description 
+            options="data"
+            title="¿Cuáles son los elementos de la comunicación?"
+            description="Para que exista la comunicación, es necesario que en la transmisión de la información, intervengan varios elementos: emisor, receptor, mensaje y código, los cuales te presentamos a continuación."
+            instruction="Haz clic sobre cada uno de los elementos y reconoce la función de cada uno de ellos en la comunicación."
+            audio="C2">
+        </show-images-block-description>
+    </script>
+
+	<script type="text/ng-template" id="con3">
+        <hover-show-text options="options" audio="C3" description="Ahora, para que te sean más claros cada uno de los elementos de la comunicación te invitamos a analizar el ejemplo presentado en la imagen. ¿Quién es el emisor?, ¿quién es el receptor?, ¿cuál es el mensaje? y ¿cuál es el código?" instruction="Desliza el mouse sobre la imagen y podrás identificar cada uno de los elementos de la comunicación."</hover-show-text>
+    </script>
+
+    <script type="text/ng-template" id="act1">
+        <pairs options="options" audio="A1" description="Arrastra cada elemento de la comunicación hacia su definición."custom-class='' >
+            <item>
+                <h1 data-bind="html: sil"></h1>
+            </item>
+            <target>
+                <h1 data-bind="html: resource"></h1>
+            </target>
+        </pairs>
+    </script>
+
+    <script type="text/ng-template" id="act2">
+        <select-questions
+                options="data"
+                audio="A2"
+                description="Analiza la situación indicada y de acuerdo a ella identifica cada uno de los elementos de la comunicación.">
+        </select-questions>
+    </script>
+
+    <script type="text/ng-template" id="act2-2">
+        <select-questions
+                options="data"
+                audio="A2-2"
+                description="Analiza la situación indicada y de acuerdo a ella identifica cada uno de los elementos de la comunicación.">
+        </select-questions>
+    </script>
+
+    <script type="text/ng-template" id="act2-3">
+        <select-questions
+                options="data"
+                audio="A2-3"
+                description="Analiza la situación indicada y de acuerdo a ella identifica cada uno de los elementos de la comunicación.">
+        </select-questions>
+    </script>
+
+    <script type="text/ng-template" id="act3">
+        <select-questions
+                options="data"
+                audio="A3"
+                description="Analiza la imagen y de acuerdo a ella identifica cada uno de los elementos de la comunicación.">
+        </select-questions>
+    </script>
+
+    <script type="text/ng-template" id="act3-2">
+        <select-questions
+                options="data"
+                audio="A3"
+                description="Analiza la imagen y de acuerdo a ella identifica cada uno de los elementos de la comunicación.">
+        </select-questions>
+    </script>
+
+    <script type="text/ng-template" id="act3-3">
+        <select-questions
+                options="data"
+                audio="A3"
+                description="Analiza la imagen y de acuerdo a ella identifica cada uno de los elementos de la comunicación.">
+        </select-questions>
+    </script>
+
+    <script type="text/ng-template" id="act4">
+        <write-true-false
+                audio="A4"
+                options="data"
+                description="Escribe en el recuadro en blanco una F si el enunciado es falso o una V si el enunciado es verdadero.">
+        </write-true-false>
+    </script>
+
+    <script type="text/ng-template" id="act5">
+        <transclusion
+                audio="A5"
+                arrow="true"
+                description="Completa el diálogo que se presenta en la siguiente imagen y comparte tu respuesta con el facilitador.">
+        <!--INICIO-->
+
+            <!--imagen-->
+                    
+            <div class="" ng-repeat="item in items" style="width: 95%;height: 370px;float: left;margin-top: 10px;margin-left: 20px;">
+                <img class="img-responsive" src="{{ $root.resources + '/' + 'conversando2.png' }}" alt="Imagen donde se muestra una mujer y un hombre dialogando, éste último dice: ¡Hola Juliana!, muy bien ¿y tú?" style="margin-left: 150px;">
+                <textarea type=" text" ng-model="item.uno" style="position: absolute;top: 33%;left: 37%;border: none; outline: none; width: 150px;height: 80px; padding: 2px 8px; font-size: 20px;background: transparent;"/>
+            </div>
+
+            <!-- CALIFICATIONS -->
+            <div ng-show="success"> <div data-congratulations></div></div>
+            <div ng-show="failure"> <div data-failure></div> </div>
+        <!--FIN-->
+        </transclusion>
+    </script>
+
+    <script type="text/ng-template" id="act6">
+        <transclusion
+                audio="A6"
+                arrow="true"
+                description="Escribe una carta a tus padres donde les cuentes la importancia de la comunicación y luego comparte tu carta con el facilitador.">
+        <!--INICIO-->
+
+            <!--imagen-->
+                    
+            <table ng-repeat="item in items" class="table-primary" style="width: 90%;float: left;margin-top: 10px;margin-left: 50px;">
+                <tr>
+                    <th style="padding: 10px;">Fecha:</th>
+                    <td style="padding: 0;border: 3px solid #000;margin-bottom: 20px;">
+                        <textarea type="text" ng-model="item.uno" style="border: none; outline: none; width: 100%;height: 100%; padding: 2px 8px; font-size: 20px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding: 10px;">Para:</th>
+                    <td style="padding: 0;border: 3px solid #000;margin-bottom: 20px;">
+                        <textarea type="text" ng-model="item.dos" style="border: none; outline: none; width: 100%;height: 100%; padding: 2px 8px; font-size: 20px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding: 10px;">Mensaje:</th>
+                    <td style="padding: 0;border: 3px solid #000;margin-bottom: 20px;">
+                        <textarea type="text" ng-model="item.tres" style="border: none; outline: none; width: 100%;height: 150px; padding: 2px 8px; font-size: 20px;"/>
+                    </td>
+                </tr>
+                <tr>
+                    <th style="padding: 10px;">De:</th>
+                    <td style="padding: 0;border: 3px solid #000;margin-bottom: 20px;">
+                        <textarea type="text" ng-model="item.cuatro" style="border: none; outline: none; width: 100%;height: 100%; padding: 2px 8px; font-size: 20px;"/>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- CALIFICATIONS -->
+            <div ng-show="success"> <div data-congratulations></div></div>
+            <div ng-show="failure"> <div data-failure></div> </div>
+        <!--FIN-->
+        </transclusion>
+    </script>
+
+    <script type="text/ng-template" id="act7">
+        <complementary  options="options" audio="A7" description="Haz clic sobre el libro y visitarás una página web en la que podrás poner en práctica los conocimientos adquiridos en esta lección."></complementary>    
+    </script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

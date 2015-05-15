@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="soc209">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+    <style>
+
+        .img-scale{
+            /*transition*/
+            -webkit-transition:all 0.4s;
+            -moz-transition:all 0.4s;
+            -o-transition:all 0.4s;
+            transition:all 0.4s;
+        }
+
+        .img-scale:hover{
+            /*transform*/
+            -webkit-transform:scale(1.5);
+            -moz-transform:scale(1.5);
+            -ms-transform:scale(1.5);
+            -o-transform:scale(1.5);
+            transform:scale(1.5);
+        }
+
+        .esp strong {
+            color: black;
+        }
+
+    </style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="soc" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="comp">
+		<competences-new 
+			options="data"	
+		></competences-new>
+	</script>
+
+    <script type="text/ng-template" id="con1">
+        <transclusion
+                audio="C1"
+                arrow="true"
+                instruction="Haz clic sobre cada país vecino de Colombia e identifica su ubicación con respecto a este país."
+                description="Colombia está ubicado en América del Sur, este país tiene algunas semejanzas y diferencias en cuanto a territorios, lenguas y costumbres con sus países vecinos: Venezuela, Brasil, Perú, Ecuador y Panamá.">
+            <!--INICIO-->
+           <div  style="width: 15%;height: 600px;float: left;margin-left: 10px;"> 
+                <div ng-repeat="item in $parent.items" class="bg-1 center-items {{ item === $parent.selectedItem ? 'item-is-selected' : '' }}" style="margin: 10px  0 6px 10px;width: 100%;min-height: 50px;float: left;position: relative;border-radius: 5px;cursor: pointer; {{ item.complete ? item.style : '' }}" ng-click="$parent.selectItem(item)"> 
+                         <p class="" style="margin: 0; text-align: center; color: #fff; font-size: 18px; padding: 5px 4px;border-radius: 5px;">
+                            {{ item.text }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div  style="width:600px;float: left;margin-left: 200px;position: absolute;display: inline-block;">
+                <div class="bd-1" style="border: 3px solid;margin: 10px  0 6px 10px;width: 100%;position: absolute;top : 0px;left: 0px;" > 
+                        <img class="img-responsive" style="display: inline-block; width: 100%;" 
+                            src="{{ $root.resources + '/' + 'mapacolombia.png' }}" alt="mapa de colombia">
+                    </div> 
+                <div ng-repeat="item in $parent.items" ng-show="item.complete" class="scale1" style="margin: 10px  0 6px 10px;width: 100%;position: absolute;top : 0px;left: 0px;" > 
+                        <img class="img-responsive" style="display: inline-block; width: 100%;"  
+                            src="{{ $root.resources + '/' + item.src + '.png' }}" alt="{{ item.alt }}" title="{{ item.title }}">
+                    </div>
+                </div>
+            </div>
+
+            <!-- CALIFICATIONS -->
+            <div ng-show="success"> <div data-congratulations></div></div>
+            <div ng-show="failure"> <div data-failure></div> </div>
+            <!--FIN-->
+        </transclusion>
+    </script>
+
+     <script type="text/ng-template" id="con2">
+        <show-concepts-text 
+            options="data"
+            itemsperrow="1"
+            description="Ahora te invitamos a conocer algunas características generales de los países vecinos de Colombia."
+            instruction="Haz clic sobre cada país para conocer más sobre él."
+            audio="C2"
+            noplay="true"></show-concepts-text>
+    </script>
+
+    <script type="text/ng-template" id="con3">
+        <transclusion 
+            audio="C3"
+            mouse="true"
+            description="Al igual que Colombia, sus países vecinos cuentan con un escudo, una bandera y un himno, algunos de ellos muy similares al nuestro."
+            instruction="Desliza el mouse sobre los recuadros para ver con más detalle los símbolos nacionales de cada país.">
+            <!--INICIO-->
+            <div style="text-align: center">
+                <div class="img-scale" ng-repeat="item in $parent.items" style="width: 30%;margin-right: 20px;display: inline-block;" ng-mouseover="$parent.selectItem(item)">
+                    <img class="img-responsive" style="" src="{{ $root.resources + '/' + item.src +'.jpg' }}" alt="{{ item.alt }}">
+                    <p class="bg-1 col-md-12" style="margin: 0; text-align: center; color: #fff; font-size: 18px; padding: 5px;">{{ item.text }}
+                    </p>
+                </div>
+            </div>
+            <!--FIN-->
+        </transclusion>
+    </script>
+
+    <script type="text/ng-template" id="con4">
+        <transclusion 
+            audio="C4"
+            mouse="true"
+            instruction="Desliza el mouse sobre los recuadros para ver con más detalle los símbolos nacionales de cada país.">
+            <!--INICIO-->
+            <div style="text-align: center">
+                <div class="img-scale" ng-repeat="item in $parent.items" style="width: 30%;margin-right: 20px;display: inline-block;" ng-mouseover="$parent.selectItem(item)">
+                    <img class="img-responsive" style="" src="{{ $root.resources + '/' + item.src +'.jpg' }}" alt="{{ item.alt }}">
+                    <p class="bg-1 col-md-12" style="margin: 0; text-align: center; color: #fff; font-size: 18px; padding: 5px;">{{ item.text }}
+                    </p>
+                </div>
+            </div>
+            <!--FIN-->
+        </transclusion>
+    </script>
+
+    <script type="text/ng-template" id="con5">
+        <show-concepts-text 
+            options="data"
+            itemsperrow="1"
+            description="Tanto Venezuela, como Brasil, Perú, Ecuador y Panamá, cuentan con sitios de interés económico o cultural y festividades que hacen que cada uno de ellos, sea reconocido a nivel mundial. Ahora te invitamos a conocer algunos de ellos."
+            instruction="Haz clic sobre cada país y descubre sus lugares o festividades representativos."
+            audio="C5"
+            noplay="true"></show-concepts-text>
+    </script>
+
+    <script type="text/ng-template" id="act1">
+    <group-complete-words options="options" audio="A1" description="Completa los siguientes enunciados con las palabras indicadas. Para completar los enunciados deberás escribir la palabra en el espacio correspondiente." >  </group-complete-words>     
+    </script>
+
+    <script type="text/ng-template" id="act2">
+        <pairs options="options" audio="A2" description="Arrastra cada lugar o fiesta representativa hacia el país vecino de Colombia con el cual guarda relación." custom-class="img-top" >
+            <item>
+                <img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + resource + '.jpg', alt: alt,  title: title }" >
+                <h1 class="bg-1" data-bind="html: text"></h1>
+            </item>
+            <target>
+                <h1 data-bind="html: sil"></h1>
+            </target>
+        </pairs>
+    </script>
+
+    <script type="text/ng-template" id="act3">
+        <puzzle4 
+            options="data"
+            audio="A3"
+            description="Arrastra y ubica correctamente cada país vecino de Colombia en el mapa de América del Sur.">
+        </puzzle4>
+    </script>
+
+    <script type="text/ng-template" id="act4">
+        <write-true-false
+                audio="A4"
+                options="data"
+                description="Escribe en el recuadro en blanco una F si el enunciado es falso o una V si el enunciado es verdadero.">
+        </write-true-false>
+    </script>
+
+    <script type="text/ng-template" id="act5">
+        <pairs options="options" audio="A5" description="Arrastra la bandera de cada país hacia el escudo correspondiente." custom-class="img-top" >
+            <item>
+                <img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + resource + '.png', alt: alt }" >
+            </item>
+            <target>
+                <img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + resource2 + '.jpg', alt: alt2,  title: title }" >
+            </target>
+        </pairs>
+    </script>
+
+    <script type="text/ng-template" id="act6">
+    <select-options-table options="options" audio="A6"  description="Luis que es colombiano desea conocer algunas características sociales de los países vecinos de su país, ayuda a Luis seleccionando las respuestas correctas en la tabla." >  </select-options-table>
+    </script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

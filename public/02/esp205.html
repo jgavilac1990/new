@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="esp205">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="esp" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<show-concepts-character 
+			options="data"
+			description="Recuerda que el cuento es una forma breve de narración, expresada en forma oral o escrita. En el cuento las historias pueden ser reales o imaginarias."
+			audio="C1"
+			mainimg="principe.png">
+		</show-concepts-character>
+	</script>
+
+	<script type="text/ng-template" id="con2">
+		<show-concepts-text 
+			options="data"
+			instruction="Haz clic sobre cada número y aprende más sobre los elementos del cuento."
+			description="El cuento tiene elementos que lo caracterizan y diferencian de otros textos, los más importantes son:"
+			title="Elementos del cuento"
+			audio="C2">
+        </show-concepts-text>
+	</script>
+	
+	<script type="text/ng-template" id="act1">
+        <group-complete-words options="options" audio="A1" description="Lee atentamente el siguiente texto, y luego haz clic sobre las líneas y completa las siguientes oraciones." title-block="Alejandra" block-text="“Alejandra es una niña que vive en una ciudad llamada Medellín. Tiene nueve años y es morena. Su comida favorita es la pizza. Alejandra tiene un hermano que se llama Roberto, sus padres son Gonzalo y Susana.”" mainimg="alejandra.png">  </group-complete-words>
+	</script>
+
+	<script type="text/ng-template" id="act2">
+		<group-select-words options="options" audio="A2" description="Lee atentamente el siguiente párrafo, haz clic sobre las palabras señaladas y cámbialas por los términos ubicados en la parte inferior que tienen el mismo significado."  </group-select-words>
+	</script>
+	
+	<script type="text/ng-template" id="act3">
+		<group-complete-text  options="options" audio="A3" description="Con base al párrafo anterior, haz clic sobre los recuadros en blanco y escribe una F si el enunciado es falso o una V si el enunciado es verdadero."></group-complete-text>
+	</script>
+	
+	<script type="text/ng-template" id="act4">
+		<pairs options="options" description="Ordena los siguientes párrafos teniendo en cuenta las partes del cuento; para ordenarlos deberás arrastrar cada número hacia el párrafo correspondiente." audio="A3">
+			<item>
+				<h1 data-bind="html: sil"></h1>
+			</item>
+			<target>
+				<h2 data-bind="html: text"></h2>
+			</target>
+		</pairs>
+	</script>
+
+	<script type="text/ng-template" id="act5">
+		<complete-words  options="options" audio="A5" description="Haz clic sobre cada línea y completa la siguiente historia e inventa un título para ella"></complete-words>	
+	</script>
+	
+	<script type="text/ng-template" id="act6">
+		<group-complete-words  options="options" audio="A6" description="Lee atentamente cada definición, haz clic sobre la línea y escribe la palabra correspondiente." </group-complete-words>
+	</script>
+
+	<script type="text/ng-template" id="act7">
+		<complementary  options="options" audio="A7" description="Haz clic sobre cada uno de los libros, y visitarás algunas páginas web en las que podrás repasar los contenidos vistos en esta lección."></complementary>	
+	</script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

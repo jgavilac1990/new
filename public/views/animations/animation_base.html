@@ -1,0 +1,45 @@
+<div class="animation-base shadow clearfix">
+	<div ng-if="isBottom" class="block">
+		<div class="clearfix">
+             <div class="help">
+			<img src="../resources/common/iconoayuda.png" alt="ícono ayuda"/>
+			<span class="tooltip8">
+            <img  class="img-rounded" style="width:100%;" src="../resources/common/ayuda.gif"/>
+            </span>
+			</div>
+			<div>
+				<p>{{ description }}</p>
+			</div>
+		</div>
+	</div> <!--/.block-->
+
+	<div ng-if="! isBottom" class="block">
+		<div class="clearfix">
+             <div class="help">		    
+			<img src="../resources/common/icono seleccion.png" alt="ícono mouse"/>
+			<span class="tooltip8">
+            <img  class="img-rounded" style="width:100%;" src="../resources/common/ayuda.gif"/>
+            </span>
+			</div>
+			<span>{{ instruction }}</span>
+		</div>
+	</div> <!--/.block-->
+
+	<div class="block-content">
+
+		<div class="button-container">
+			<div id="{{ animationId }}" class="{{ animationClass }}" ng-transclude></div>
+
+			<button class="btn-primary {{ isRunning ? 'disabled' : '' }}" ng-click="run()">iniciar</button>
+		</div> <!--/.button-container-->
+
+	</div> <!--/.block-content-->
+
+</div> <!--/.animation-base-->
+
+<div ng-if="isBottom" class="block bottom">
+	<p class="clearfix">
+	<img src="../resources/common/icono seleccion.png" alt="ícono mouse"/>
+	<span>{{ instruction }}</span>
+	</p>
+</div> <!--/.block.bottom-->

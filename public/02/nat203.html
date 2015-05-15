@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="nat203">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="nat" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<bubble-description 
+			options="data"
+			instruction="Desliza el mouse sobre los circulos y descubrirás algunos ejemplos."
+			description="Tanto los animales como las plantas pueden clasificarse de acuerdo al medio donde habitan, para el caso de los animales, estos se pueden clasificar en:"
+			audio="D6">
+
+		</bubble-description>
+	</script>
+
+	<script type="text/ng-template" id="con2">
+		<bubble-description 
+			options="data"
+			instruction="Desliza el mouse sobre los círculos y descubrirás algunos ejemplos."
+			description="Las plantas de acuerdo al medio donde viven, pueden clasificarse en:"
+			audio="D8">
+
+		</bubble-description>
+	</script>
+
+	<script type="text/ng-template" id="act1">
+		<drag-drop-multiples-diff options="data" description="Clasifica los animales según el medio donde viven y arrástralos hasta el recuadro correspondiente." audio="D10">
+			<item>
+				<img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + resource + '.png', alt: alt }">
+			</item>
+		</drag-drop-multiples-diff>
+	</script>
+
+	<script type="text/ng-template" id="act2">
+		<complete-table-image-inputs 
+			options="data"
+			instruction="Observa cada animal, luego escribe su nombre y su hábitat (aéreo, terrestre o acuático) en la tabla."
+			audio="D11-12">
+		</complete-table-image-inputs>
+	</script>
+
+	<script type="text/ng-template" id="act2_2">
+		<complete-table-image-inputs 
+			options="data"
+			instruction="Observa cada animal, luego escribe su nombre y su hábitat (aéreo, terrestre o acuático) en la tabla."
+			audio="D11-12">
+
+		</complete-table-image-inputs>
+	</script>
+
+	<script type="text/ng-template" id="act3">
+		<complete-inputs-true-false
+			options="data"
+			instruction="Haz clic sobre cada recuadro en blanco  y escribe una F si el enunciado es falso o una V si el enunciado es verdadero."
+			audio="D13">
+
+		</complete-inputs-true-false>
+	</script>
+
+	<script type="text/ng-template" id="act4">
+		<complete-table-with-list
+			options="data"
+			instruction="Clasifica según su hábitat el siguiente listado de animales y plantas, y escríbelos en la tabla."
+			audio="D14">
+
+		</complete-table-with-list>
+	</script>
+
+	<script type="text/ng-template" id="act5">
+		<choose-correct-option
+			options="data"
+			instruction="Haz clic sobre el hábitat correspondiente a cada animal o planta."
+			audio="D15">
+
+		</choose-correct-option>
+	</script>
+
+	<script type="text/ng-template" id="act6">
+		<letter-soup
+			options="data"
+			description="Busca en la sopa de letras diez nombres de animales, recuerda que para seleccionar las palabras en la sopa de letras debes hacer clic en la primera y última letra de la palabra."
+			audio="D16">
+		</letter-soup>
+	</script>
+
+	<script type="text/ng-template" id="act6_2">
+		<complete-table-with-list
+			options="data"
+			instruction="Clasifica, según el medio donde viven, los animales que encontraste en la anterior sopa de letras."
+			audio="D17">
+
+		</complete-table-with-list>
+	</script>
+
+	<script type="text/ng-template" id="act7">
+		<group-inputs
+			options="data" 
+			description="Pregunta a tus padres cinco animales aéreos, terrestres y acuáticos que conozcan y escríbelos en la tabla."
+			audio="D18">
+		</group-inputs>
+	</script>
+
+	<script type="text/ng-template" id="act8">
+		<complementary  options="options" audio="D20" description="Haz clic sobre cada libro, y visitarás algunas páginas web en las que podrás repasar los contenidos vistos en esta lección."></complementary>	
+	</script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="soc206">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css"> 
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="soc" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+        <transclusion
+                audio="D6"
+                title="¿Qué son las normas de tránsito?"
+                description="Las normas de tránsito son un conjunto de leyes que informan y regulan a los conductores, ciclistas, peatones y usuarios de transporte público, con el fin de ordenar su comportamiento en el desplazamiento por las vías y proteger sus vidas.">
+            <!--INICIO-->
+            <div class="text-center">
+                <img style="display: inline-block;" class="img-responsive" src="{{ $root.resources + '/' + 'presentacion.png' }}" alt="Joven mostrando en un tablero Imágenes relacionadas con el clima: sol, nubes, nieve, Lluvia, rayos, viento y huracanes">
+            </div>
+            <!--FIN-->
+        </transclusion>
+    </script>
+
+    <script type="text/ng-template" id="con2">
+		<images-block-description 
+			options="data"
+			title="¿Qué son las señales de tránsito?"
+			instruction="Haz clic sobre los recuadros y conoce algunas señales de tránsito."
+			description="Las señales de tránsito son un conjunto de símbolos que buscan informar y controlar la movilidad de las personas y de los medios de transporte, para garantizar la seguridad y la integridad de las personas. Las señales de tránsito se clasifican en: reglamentarias, preventivas e informativas."
+			audio="D7">
+
+		</images-block-description>
+	</script>
+
+	<script type="text/ng-template" id="con3">
+		<images-block-description 
+			options="data"
+			title="Señales  reglamentarias"
+			instruction="Haz clic sobre los recuadros y conoce la información transmitida por estas señales."
+			description="Las señales reglamentarias tienen como objetivo indicar a los usuarios de las vías las restricciones sobre su uso. Observa los ejemplos que se presentan a continuación."
+			audio="D8">
+
+		</images-block-description>
+	</script>
+
+	<script type="text/ng-template" id="con4">
+		<images-block-description 
+			options="data"
+			title="Señales  preventivas"
+			instruction="Haz clic sobre los recuadros y conoce la información transmitida por estas señales."
+			description="Las señales preventivas tienen por objeto advertir al usuario de la vía la existencia de un peligro y la naturaleza de éste. Observa los ejemplos que se presentan a continuación."
+			audio="D9">
+
+		</images-block-description>
+	</script>
+
+	<script type="text/ng-template" id="con5">
+		<images-block-description 
+			options="data"
+			title="Señales  informativas"
+			instruction="Haz clic sobre los recuadros y conoce la información transmitida por estas señales."
+			description="Las señales informativas tienen como objetivo guiar a las personas en la vía, suministrándole información de localidades, destinos, direcciones, sitios especiales, distancias y prestación de servicios. Observa los ejemplos que se presentan a continuación."
+			audio="D10">
+
+		</images-block-description>
+	</script>
+
+	<script type="text/ng-template" id="con6">
+		<show-concepts-text 
+			options="data"
+			description="El agente de tránsito, el paso peatonal o la cebra y el semáforo son otros elementos de importancia en las calles, gracias a que ellos regulan la movilidad. A continuación te invitamos a conocer más sobre estos elementos."
+			instruction="Haz clic sobre los recuadros y amplía tus conocimientos."
+			audio="D11"
+			noplay="true"></show-concepts-text>
+	</script>
+
+	<script type="text/ng-template" id="con7">
+		<show-concepts-text 
+			options="data"
+			description="Ahora reconozcamos la funcionalidad del semáforo y aprendamos que nos indican cada una de sus luces."
+			instruction="Haz clic los sobre círculos y aprende que te indica cada una de las luces del semáforo."
+			audio="D15"
+			noplay="true"></show-concepts-text>
+	</script>
+
+	<script type="text/ng-template" id="act1">
+		<pairs options="options" description="Arrastra cada señal de tránsito hacia su respectiva advertencia, indicación o información." audio="D19">
+			<item>
+				<img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + resource + '.png', alt: alt }" >				
+			</item>
+			<target>
+				<div>
+					<p data-bind="text: text" class="align-children" style="min-height: 238px;"></p>
+				</div>
+			</target>
+		</pairs>
+	</script>
+
+	<script type="text/ng-template" id="act2">
+		<drag-drop-multiples options="data" description="Arrastra cada una de las señales de tránsito al recuadro correspondiente." audio="D20">
+			<item>
+				<img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + resource + '.png', alt: alt }">
+			</item>
+		</drag-drop-multiples>
+	</script>
+	
+	<script type="text/ng-template" id="act3">
+		<choose-correct-image 
+			options="data"
+			description="Selecciona la imagen del vehículo que está incumpliendo las señales de tránsito."
+			audio="D21-23"></choose-correct-image>
+	</script>
+
+	<script type="text/ng-template" id="act3_2">
+		<choose-correct-image 
+			options="data"
+			description="Selecciona la imagen del vehículo que está incumpliendo las señales de tránsito."
+			audio="D21-23"></choose-correct-image>
+	</script>
+
+	<script type="text/ng-template" id="act3_3">
+		<choose-correct-image 
+			options="data"
+			description="Selecciona la imagen del vehículo que está incumpliendo las señales de tránsito."
+			audio="D21-23"></choose-correct-image>
+	</script>
+
+	<script type="text/ng-template" id="act4">
+		<select-table-image-multiple
+			options="data"
+			instruction="De acuerdo a la situación presentada en la imagen, selecciona la luz correcta de los semáforos."
+			audio="D24"></select-table-image-multiple>
+	</script>
+
+	<script type="text/ng-template" id="act5">
+		<select-correct-image-option
+			options="data"
+			instruction="Analiza con tus padres la situación presentada en las imágenes y luego selecciona el personaje que está incumpliendo las normas de tránsito en cada una de ellas."
+			audio="D25"></select-correct-image-option>
+	</script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>

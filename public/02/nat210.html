@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="nat210">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+    <style>
+
+    .overlay-act7{
+        background: #fff;
+    }
+
+    .big-img {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 151;
+        top: 0;
+        left: 0;
+        overflow: scroll;
+    }
+
+    .big-img img {
+            color: #fff;
+        }
+
+    .close-btn {
+        z-index: 152;
+        position: fixed;
+        top: 16px;
+        right: 32px;
+        font-size: 22px;
+        width: 2em;
+        height: 2em;
+    }
+        
+    </style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="nat" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="comp">
+		<competences-new 
+			options="data"	
+		></competences-new>
+	</script>
+
+    <script type="text/ng-template" id="con1">
+        <text1
+        block=true
+            titletop="¿Qué es la agricultura?"
+            img-title='<div class="bg-1 col-md-12" style="color: white;padding: 10px;width:399px;margin-left: 43px;">Agricultor</div>'
+            description="La agricultura es el conjunto de actividades desarrolladas para cultivar la tierra y obtener de ella frutas, hortalizas, cereales, entre otros productos.<br><br>El <strong>agricultor</strong> es la persona que trabaja en el campo y se encarga de: preparar la tierra, sembrar las semillas o plantas, cuidarlas y recoger los productos obtenidos de la tierra.<br><br>Para facilitar y agilizar su trabajo, el agricultor emplea diferentes herramientas y maquinarias, dentro de las que se encuentran: el azadón, el rastrillo, el machete, el tractor, entre otros."
+            img="agricultor.png"
+            alt="donde se muestra un agricultor trabajando con el azadón la tierra y realizando el mantenimiento de un cultivo de repollo" audio="C1">
+        </text1>
+    </script>
+
+	<script type="text/ng-template" id="con2">
+        <show-concepts-text 
+            options="data"
+            itemsperrow="1"
+            description="Las actividades desarrolladas por los agricultores para cultivar la tierra son: arar, sembrar, regar, abonar y recolectar."
+            instruction="Haz clic sobre cada uno de los recuadros y conoce con mayor detalle cada una de las actividades desarrolladas por los agricultores."
+            audio="C2"
+            noplay="true"></show-concepts-text>
+    </script>
+
+    <script type="text/ng-template" id="con3">
+        <text1
+        block=true
+            titletop="¿Qué es la ganadería?"
+            img-title='<div class="bg-1" style="color: white;padding: 10px;width:405px;margin-left: 40px;">Ganadero</div>'
+            description="La ganadería es la cría de animales para obtener de ellos productos tales como: leche, carne, huevos, lana, miel y pieles.<br><br>El <strong>ganadero</strong> es la persona que se encarga de trabajar en el mantenimiento y cuidado de los animales.<br><br>El ganadero se encarga de la crianza de vacas, terneros, cerdos, conejos, abejas, gallinas o caballos, entre otros animales."
+            img="ganadero.png"
+            alt="donde se muestra un ganadero arriando sus vacas hacia el potrero" audio="C3">
+        </text1>
+    </script>
+
+    <script type="text/ng-template" id="con4">
+        <text1
+        block=true
+            titletop="¿Qué es la pesca?"
+            img-title='<div class="bg-1" style="color: white;padding: 10px;width:399px;margin-left: 43px;">Pescador</div>'
+            description="La pesca es la captura y extracción de los peces o otras especies acuáticas que habitan en los ríos y los océanos y que son útiles al hombre.<br><br>El <strong>pescador</strong> es la persona que se encarga de sacar los animales acuáticos de su medio natural."
+            img="pescador.png"
+            alt="donde se muestra un señor pescando en un río con la ayuda de una red" audio="C4">
+        </text1>
+    </script>
+
+    <script type="text/ng-template" id="con5">
+        <text1
+        block=true
+            description="La agricultura, la ganadería y la pesca son importantes para el hombre, ya que gracias a ellas el hombre recibe beneficios tales como: alimentación, vivienda, vestuario, ingresos económicos, entre otros. <br><br>Pero las malas prácticas desarrolladas por el hombre han ocasionado la destrucción y contaminación de suelos, ríos, océanos, lagos, quebradas, bosques, entre otros hábitats"
+            img="danos.png"
+            alt="donde se muestra un señor pescando en un río con la ayuda de una red" audio="C5">
+        </text1>
+    </script>
+
+    <script type="text/ng-template" id="act1">
+        <write-true-false
+                audio="A1"
+                options="data"
+                description="En el recuadro en blanco escribe una F si el enunciado es falso o una V si el enunciado es verdadero.">
+        </write-true-false>
+    </script>
+
+    <script type="text/ng-template" id="act2">
+        <select-options-positions options="options" audio="A2" description="Observa cada uno de los objetos o elementos presentados en las imágenes y selecciona con cuál actividad guarda relación (agricultura, ganadería o pesca)."  </select-options-positions>
+    </script>
+
+    <script type="text/ng-template" id="act2-2">
+        <select-options-positions options="options" audio="A2" description="Observa cada uno de los objetos o elementos presentados en las imágenes y selecciona con cuál actividad guarda relación (agricultura, ganadería o pesca)."  </select-options-positions>
+    </script>
+
+     <script type="text/ng-template" id="act3">
+        <pairs options="options" audio="A3" description="Arrastra cada oficio hacia la imagen donde está representado.">
+            <item>
+                <h1 data-bind="html: sil"></h1>
+            </item>
+            <target>
+                <img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + resource + '.png', alt: alt }" >
+            </target>
+        </pairs>
+    </script>
+
+   <script type="text/ng-template" id="act4">
+        <pairs options="options" audio="A4" description="Arrastra cada término relacionado con la agricultura hacia su definición.">
+            <item>
+                <h1 data-bind="html: sil"></h1>
+            </item>
+            <target>
+                <h1 data-bind="html: sil2"></h1>
+            </target>
+        </pairs>
+    </script>
+
+    <script type="text/ng-template" id="act5">
+        <select-checkbox
+                audio="A5"
+                options="data"
+                description="Selecciona las respuestas correctas para cada una de las preguntas indicadas.">
+        </select-checkbox>
+    </script>
+
+    <script type="text/ng-template" id="act6">
+        <transclusion
+                audio="A6"
+                arrow="true"
+                description="Con la ayuda de tus padres investiga qué prácticas desarrolladas en la agricultura, la ganadería y la pesca contaminan y destruyen los ríos, las quebradas y los bosques. Escribe en el recuadro tu respuesta y compártela con el facilitador.">
+            <!--INICIO-->
+
+            <textarea  ng-model="$parent.input" class="bd-1" style="width: 100%;height: 300px; font-size: 24px; padding: 20px 26px; border: 2px solid;"/>
+
+            <!-- CALIFICATIONS -->
+            <div ng-show="success"> <div data-congratulations></div></div>
+            <div ng-show="failure"> <div data-failure></div> </div>
+            <!--FIN-->
+        </transclusion>
+    </script>
+
+    <script type="text/ng-template" id="act7">
+        <complementary  options="options" audio="A7" description="Haz clic sobre el libro y visitarás una página web en la que podrás repasar y ampliar los contenidos vistos en esta lección."></complementary>    
+    </script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

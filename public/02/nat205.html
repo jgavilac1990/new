@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="nat205">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css"> 
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+	<style type="text/css">
+		.liz-pairs {
+			margin-bottom: 10px;
+			padding-bottom: 100px;
+		}
+	</style>
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="nat" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+    <script type="text/ng-template" id="con1">
+        <transclusion
+                audio="D6"
+                description="El clima comprende el conjunto de características atmosféricas que se dan en un lugar durante un período largo de tiempo.">
+            <!--INICIO-->
+            <div class="text-center">
+                <img style="display: inline-block;" class="img-responsive" src="{{ $root.resources + '/' + 'presentacion.png' }}" alt="Joven mostrando en un tablero Imágenes relacionadas con el clima: sol, nubes, nieve, Lluvia, rayos, viento y huracanes">
+            </div>
+            <!--FIN-->
+        </transclusion>
+    </script>
+
+	<script type="text/ng-template" id="con2">
+		<show-concepts-text 
+			options="data"
+			title="Los elementos del clima"
+			description="Son los fenómenos que se producen en la atmósfera, son los siguientes:"
+			instruction="Haz clic sobre cada número y podrás conocer cada elemento."
+			audio="D7"
+			noplay="true"></show-concepts-text>
+	</script>
+
+	<script type="text/ng-template" id="con3">
+		<button-bubble-description
+			options="data"
+			title="Tipos de clima"
+			description="Podemos encontrar muchos tipos de clima, pero los principales son: cálido, templado y frío. ¡Te invito a conocerlos!"
+			instruction="Haz clic sobre cada recuadro y conoce más sobre los tipos de clima."
+			mainimg="nina-con-sombrilla.png"
+			alt="Joven con una sombrilla en un día lluvioso."
+			audio="D13">
+		</button-bubble-description>
+	</script>
+
+	<script type="text/ng-template" id="con4">
+		<animation-video
+			options="data"
+			title="La atmósfera"
+			description="Es una capa de gas que envuelve la tierra, ésta es muy importante porque además de permitirnos vivir en la tierra, también ejerce una gran influencia sobre el clima y sus elementos."
+			audio="D15">
+
+		</animation-video>
+	</script>
+
+	<script type="text/ng-template" id="act1">
+		<complete-text-boxes
+			options="data"
+			instruction="Haz clic sobre los recuadros en blanco y responde las siguientes preguntas."
+			audio="D16">
+		</complete-text-boxes>
+	</script>
+
+	<script type="text/ng-template" id="act2">
+		<complete-table-with-text
+			options="data"
+			instruction="Haz clic sobre cada recuadro en blanco y escribe el instrumento empleado para medir el elemento indicado."
+			audio="D17">
+
+		</complete-table-with-text>
+	</script>
+
+	<script type="text/ng-template" id="act3">
+		<complete-words-select
+			options="data"
+			instruction="Haz clic sobre la flecha y selecciona la palabra adecuada para completar las siguientes frases."
+			audio="D18">
+		</complete-words-select>
+	</script>
+
+	<script type="text/ng-template" id="act4">
+		<pairs options="options" description="Arrastra cada concepto hacia la imagen correspondiente." audio="D19">
+			<item>
+				<div style="min-height: 120px; display: flex; align-items: center; justify-content: center; ">
+					<p data-bind="text: text"></p>
+				</div>
+			</item>
+			<target>
+				<img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + src + '.png', alt: alt }" >
+			</target>
+			<item-target>
+                <div style="min-height: 82px; align-items: center; margin-top: 155px; justify-content: center; border: 3px solid; display: table;">
+					<p data-bind="text: text" style="margin: 5px 0; display:table-cell; vertical-align: middle;"></p>
+				</div>
+            </item-target>
+		</pairs>
+	</script>
+
+	<script type="text/ng-template" id="act5">
+		<complete-table-inputs options="data" instruction="Analiza con tus padres el clima de la semana pasada y escribe en la siguiente tabla que clima hizo durante los días de la semana analizada." audio="D20"></complete-table-inputs>
+	</script>
+
+	<script type="text/ng-template" id="act6">
+		<complementary  options="options" audio="D22" description="Haz clic sobre el libro, y visitarás una página web en la que podrás repasar los contenidos vistos en esta lección."></complementary>	
+	</script>
+
+	
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

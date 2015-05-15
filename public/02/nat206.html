@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="nat206">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css"> 
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="nat" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<images-block-description 
+			options="data"
+			instruction="Haz clic sobre cada una de las imágenes y descubre si los elementos  allí representados son luminosos o iluminados."
+			description="La luz es una forma de energía, gracias a ella podemos ver todo aquello que hay a nuestro alrededor. Existen cuerpos capaces de producir su propia luz, estos cuerpos reciben el nombre de objetos luminosos, mientras que los objetos que no emiten luz propia son llamados iluminados."
+			audio="D6">
+		</images-block-description>
+	</script>
+
+	<script type="text/ng-template" id="con2">
+		<images-block-description 
+			options="data"
+			title="Fuentes luminosas naturales"
+			description="Las fuentes luminosas naturales son aquellas que producen luz propia y se encuentran en la naturaleza, como el sol, algunos insectos como las luciérnagas y el fuego generado de manera natural."
+			audio="D7">
+
+		</images-block-description>
+	</script>
+
+	<script type="text/ng-template" id="con3">
+		<images-block-description 
+			options="data"
+			title="Fuentes luminosas artificiales"
+			description="Las fuentes luminosas artificiales son aquellas capaces de producir luz, estas fuentes se diferencian de las anteriores porque han sido fabricadas por el hombre."
+			audio="D8">
+
+		</images-block-description>
+	</script>
+
+	<script type="text/ng-template" id="con4">
+		<show-images-block-description 
+			options="data"
+			description="El sol, las velas, los bombillos, los fósforos y las fogatas son fuentes de luz, útiles para realizar nuestras actividades diarias. Sin embargo, debes tener cuidado al usarlas, ya que pueden poner en peligro tu bienestar o el del medio ambiente."
+			instruction="Haz clic sobre cada una de las imágenes y conoce los cuidados que debes tener con cada fuente de luz."
+			audio="D9">
+
+		</show-images-block-description>
+	</script>
+
+	<script type="text/ng-template" id="act1">
+        <radio-questions
+            options="data"
+            audio="D11"
+            description="Selecciona la respuesta correcta para cada una de las preguntas.">
+        </radio-questions>
+    </script>
+
+    <script type="text/ng-template" id="act2_1">
+		<one-group options="data" description="Arrastra hacia el recuadro las imágenes donde se presentan fuentes luminosas." audio="D12"> </one-group>
+	</script>
+
+    <script type="text/ng-template" id="act2_2">
+		<drag-drop-multiples-diff options="data" description="Clasifica en los recuadros las imágenes según representen fuentes luminosas naturales o artificiales." audio="D13">
+			<item>
+				<img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + resource + '.png', alt: alt }">
+			</item>
+		</drag-drop-multiples-diff>
+	</script>
+
+	<script type="text/ng-template" id="act3">
+		<complete-table-with-list
+			options="data"
+			instruction="Clasifica y escribe en la tabla las fuentes luminosas que se presentan a continuación."
+			audio="D14">
+
+		</complete-table-with-list>
+	</script>
+
+	<script type="text/ng-template" id="act4">
+		<group-inputs
+			options="data" 
+			description="Escribe en la tabla cinco objetos luminosos y cinco objetos iluminados que encuentres en tu casa, luego comparte tus respuestas con el facilitador."
+			audio="D15">
+		</group-inputs>
+	</script>
+
+	<script type="text/ng-template" id="act5">
+		<complementary  options="options" audio="D17" description="Haz clic sobre el libro, y visitarás una página web en la que podrás repasar y ampliar los contenidos vistos en esta lección."></complementary>	
+	</script>
+
+	
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>

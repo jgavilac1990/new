@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="mat210">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+	<style>
+
+	.more-height{
+		max-height: 400px !important;
+	}
+	 .scale-img {
+            cursor: pointer;
+            transition: all 0.4s;
+            -webkit-transition: all 0.4s;
+        }
+
+        .scale-img:hover {
+            transform: scale(1.1);
+            -webkit-transform: scale(1.1);
+        }
+
+	</style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="mat" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<transclusion 
+			audio="d6"
+			description="La estadística">
+			<!--INICIO-->
+			<div style=" border:3px solid #BD0926;width: 40%; height:80%; display: block;  float: right; margin-top:5%; margin-right:5%;">
+			    <img class="img-responsive" style="display: inline-block; cursor: pointer;" ng-click="activateNext()" play="audio-1" on="click" 
+					src="{{ $root.resources + '/destruciones.png' }}" alt="2 por 3 es igual 6. Es decir, dos más dos más dos es igual a 6.">
+			</div>
+			<div style=" padding: -380px; display: block; float:lef; margin-left: 15%;">
+                        <p style=" width:30%; margin-top:5%; DECORATION: none ; TEXT-ALIGN:justify; FONT-SIZE: 20px;">Diariamente nos enfrentamos a una gran cantidad de información que contiene datos sobre el mundo que nos rodea y a veces no la sabemos  interpretar. Para ello, la estadística nos ayuda a organizar, resumir e interpretar los datos que obtengamos, haciendo uso de las matemáticas.</p>
+			</div>
+
+			<!--audio element-->
+			<audio id="audio-1" preload="auto">
+				<source src="{{ $root.resources + '/D6.mp3' }}" type="audio/mpeg">
+			</audio>
+			<!--FIN-->
+
+		</transclusion>
+
+	</script>
+	<script type="text/ng-template" id="con2">
+        <transclusion 
+            description="En resumen, la estadística permite:"
+            instruction="Desliza el mouse sobre cada unas de las imagenes"
+            mouse="true"
+            audio="D7">
+            <!--INICIO-->
+            <div style="">
+                <div ng-repeat="item in $parent.items" class="scale-img" style="margin: 0  0 6px 30px;width: 30%;float: left;position: relative;"
+                    ng-mouseover="$parent.verify(item)"> 
+                    <div class="bd-1" style="float:left;border: 3px solid;">
+                        <img class="img-responsive" style="display: inline-block; width: 80%;" 
+                            src="{{ $root.resources + '/' + item.src + '.jpg' }}" alt="{{ item.alt }}" title="{{ item.title }}">
+                         <p class="bg-1" style="margin: 0; text-align: center; color: #fff; font-size: 23px; padding: 25px 4px;">
+                            {{ item.text }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--FIN-->
+        </transclusion>
+    </script>
+
+    <script type="text/ng-template" id="con3">
+        <transclusion 
+            description="Las tablas y gráficos generalmente se utilizan para mostrar información a diferentes públicos, tales como estudiantes, empresarios o usuarios de medios de comunicación escrita cómo la prensa."
+            title="Tablas y gráficos"
+            instruction="Observa la tabla de datos y su respectivo gráfico."
+            mouse="true"
+            audio="d8">
+            <!--INICIO-->
+            <div style="">
+                <div ng-repeat="item in $parent.items" class="scale-img" style="margin: 0  0 50px 100px;width: 80%;float: left;position: relative;"
+                    ng-mouseover="$parent.verify(item)"> 
+                    <div class="bd-1" style="float:left;border: 3px solid;">
+                        <img class="img-responsive" style="display: inline-block; width: 100%;" 
+                            src="{{ $root.resources + '/' + item.src + '.jpg' }}" alt="{{ item.alt }}" title="{{ item.title }}">
+                    </div>
+                </div>
+            </div>
+            <!--FIN-->
+        </transclusion>
+    </script>
+
+     <script type="text/ng-template" id="con4">
+        <image-map-mat 
+            options="data"
+            title="¿Cuál es la importancia de interpretar tablas y gráficos?"
+            instruction="Haz clic sobre cada uno de los números de la imagen y reconoce algunas características del pueblo nómada."
+            audio="D9">
+        </image-map-mat>
+    </script>
+    <script type="text/ng-template" id="con5">
+        <transclusion 
+            description="A continuación puedes ver  los  tipos de gráficos más usados: "
+            instruction="Desliza el mouse sobre cada unas de las imagenes"
+            mouse="true"
+            audio="d11">
+            <!--INICIO-->
+            <div style="">
+                <div ng-repeat="item in $parent.items" class="scale-img" style="margin: 0  0 6px 30px;width: 30%;float: left;position: relative;"
+                    ng-mouseover="$parent.verify(item)"> 
+                    <div class="bd-1" style="float:left;border: 3px solid;">
+                        <img class="img-responsive" style="display: inline-block; width: 80%;" 
+                            src="{{ $root.resources + '/' + item.src + '.jpg' }}" alt="{{ item.alt }}" title="{{ item.title }}">
+                         <p class="bg-1" style="margin: 0; text-align: center; color: #fff; font-size: 23px; padding: 25px 4px;">
+                            {{ item.text }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--FIN-->
+        </transclusion>
+    </script>
+
+    <script type="text/ng-template" id="con6">
+        <transclusion
+                audio="d12"
+                description="A continuación se ilustra la forma en que se realiza el tratamiento de la información:"
+        <!--INICIO-->
+
+            <div class="" style="width: 100%;float: left;margin-top: 20px;margin-left: 0px;display: inline-block">
+
+                <div class="bg-1" style="float: left; width: 350px;height: 50px;margin-left: 337px;text-align: center;line-height: 50px;font-size: 20px;color: white!important;">{{ maintitle }}</div>
+                <img class="img-responsive" style="float: left; width: 50%;height: 120px;margin-left: 270px;" src="{{ $root.resources + '/' + 'lineas.png' }}" alt="Diagrama donde se presenta cómo se dividen las actividades económicas en: primarias, secundarias y terciarias" >
+                  
+                <div ng-repeat="item in items" class="bd-1" style="color: white!important;width: 30%;float: left;margin-top: 0px;margin-left: 15%;display: inline-block"><div class="bg-1" style="float: left; width: 100%;height: 30px;text-align: center;line-height: 30px;font-size: 20px;color: white!important;">{{ item.title }}</div><div class="fc-1" style="float: left; width: 100%;height: 100px;font-size: 20px;padding: 0 10px 0 10px;display: inline-table;" ng-bind-html="sanitize(item.text)"></div></div>
+            </div>
+            
+
+            <!-- CALIFICATIONS -->
+            <div ng-show="success"> <div data-congratulations></div> </div>
+            <div ng-show="failure"> <div data-failure></div> </div>
+        <!--FIN-->
+        </transclusion>
+    </script>
+  <script type="text/ng-template" id="con7">
+      <transclusion
+        audio="D13"
+        <!--INICIO-->
+        <div class="text-center">
+          <div style=" width:70%;display: inline-block; position: relative;  ">
+            <img ng-click="goNext()" class="img-responsive" style"margin-left:100%;  " src="{{ $root.resources }}/pregunta.png"
+                 alt="JJoven que se está preguntando ¿Qué son las tablas de datos?"/>
+
+            <div ng-click="goNext()" style="position: absolute; top: 70px;  left: 230px;  color: #000; font-size: 25px;">
+              <ul style="text-align: justify ;">
+                <p ng-click="goNext()" >¿Qué son las tablas de datos? </p>
+                
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!--FIN-->
+      </transclusion>
+    </script>
+    <!--templates-->
+	<script type="text/ng-template" id="con8">
+		<transclusion 
+			audio="D14"
+			description="Las tablas de datos">
+			<!--INICIO-->
+			<div style=" border:3px solid #BD0926;width: 40%; height:80%; display: block;  float: right; margin-top:5%; margin-right:5%;">
+			    <img class="img-responsive" style="display: inline-block; cursor: pointer;" ng-click="activateNext()" play="audio-1" on="click" 
+					src="{{ $root.resources + '/celebracion.png' }}" alt="2 por 3 es igual 6. Es decir, dos más dos más dos es igual a 6.">
+			</div>
+			<div style=" padding: -380px; display: block; float:lef; margin-left: 15%;">
+                        <p style=" width:30%; margin-top:5%; DECORATION: none ; TEXT-ALIGN:justify; FONT-SIZE: 20px;">Son una manera de presentar la información de forma resumida y clara, y se caracterizan porque cualquier persona puede comprender la información contenida en una tabla de datos.</p>
+                           <p style=" width:30%; margin-top:5%; DECORATION: none ; TEXT-ALIGN:justify; FONT-SIZE: 20px;">Un ejemplo de una tabla de datos es el calendario, que permite identificar la fecha de nacimiento.</p>
+
+			</div>
+
+			<!--audio element-->
+			<audio id="audio-1" preload="auto">
+				<source src="{{ $root.resources + '/D6.mp3' }}" type="audio/mpeg">
+			</audio>
+			<!--FIN-->
+
+		</transclusion>
+
+	</script>
+	<script type="text/ng-template" id="con9">
+  <transclusion
+    audio="d15"
+    <!--INICIO-->
+    <div  class="text-center scale-img">
+      <div style="display: inline-block; position: relative;">
+        <img class="img-responsive "style="width:300%; "src="{{ $root.resources }}/tableronino.png"
+             alt="Pizarra o tablero, con un lápiz feliz porque esta explicando cuales son las propiedades de la suma."/>
+          <div  style="position: absolute; top: 200px;  left: 120px;  color: #000; font-size: 25px;">
+          <ul style="text-align: left;">
+            <h3  class="text-center">Ejemplo de tabla de datos:</h3>
+            <p style=" width:70%; margin-top:5%; TEXT-ALIGN:justify; FONT-SIZE: 20px;" >Los niños y niñas de un curso registraron el mes en que cada uno está de cumpleaños.</p>
+          </ul>
+
+          
+        </div>
+      </div>
+    </div>
+    <!--FIN-->
+  </transclusion>
+</script>
+<script type="text/ng-template" id="con10">
+  <transclusion
+    audio="d16"
+    <!--INICIO-->
+    <div  style=""  class="text-center scale-img">
+      <div style="display: inline-block; position: relative; ">
+        <img class="img-responsive "style=" "src="{{ $root.resources }}/tableronino.png"
+             alt="Pizarra o tablero, con un lápiz feliz porque esta explicando cuales son las propiedades de la suma."/>
+          <div  style="position: absolute; top: 200px;  left: 120px;  color: #000; font-size: 20px;">
+          <ul style="text-align: left;">
+            <p  style="width:70%;" class="text-center">Primero, se anotó un en el mes del cumpleaños de cada niño o niña.</p>
+            <table class="table-primary" style=" width: 1%;float: left;margin-top: 10px;margin-left: 10px;">
+            <tr>
+             <td style="font-size:10; color:#fff; background:#BD0926;">
+                Enero
+             </td>
+             <td style="font-size:10; color:#fff; background:#BD0926;">
+                Febrero
+             </td>
+             <td style=" font-size:10; color:#fff; background:#BD0926;" >
+                Marzo
+             </td>
+             <td style="font-size:10; color:#fff; background:#BD0926;">
+                Abril
+             </td>
+             <td style="font-size:10; color:#fff; background:#BD0926;">
+                Mayo
+             </td>
+             <td style=" font-size:10; color:#fff; background:#BD0926;">
+                Junio
+             </td>
+            </tr>
+            <tr>
+              <td>Ѵ Ѵ Ѵ Ѵ</td>
+              <td>ѴѴ</td>
+              <td>Ѵ Ѵ Ѵ Ѵ Ѵ</td>
+              <td>Ѵ</td>
+              <td>Ѵ Ѵ Ѵ </td>
+              <td>Ѵ Ѵ Ѵ Ѵ Ѵ Ѵ Ѵ</td>
+            </tr>
+            
+          </table>
+           
+          </ul>
+
+          
+        </div>
+      </div>
+    </div>
+    <!--FIN-->
+  </transclusion>
+</script>
+<script type="text/ng-template" id="con11">
+  <transclusion
+    audio="d17"
+    <!--INICIO-->
+    <div  style=""  class="text-center scale-img">
+      <div style="display: inline-block; position: relative; ">
+        <img class="img-responsive "style=" "src="{{ $root.resources }}/tableronino.png"
+             alt="Pizarra o tablero, con un lápiz feliz porque esta explicando cuales son las propiedades de la suma."/>
+          <div  style="position: absolute; top: 200px;  left: 120px;  color: #000; font-size: 22px;">
+          <ul style="text-align: left;">
+            <p  style="width:100%;" class="text-center">Luego se registraron  los datos en la siguiente4</p>
+            <table class="table-primary" style=" width: 1%;float: left;margin-top: 10px;margin-left: 10px;">
+            <tr>
+             <td style="font-size:10; color:#fff; background:#BD0926;">
+                Enero
+             </td>
+             <td style="font-size:10; color:#fff; background:#BD0926;">
+                Febrero
+             </td>
+             <td style=" font-size:10; color:#fff; background:#BD0926;" >
+                Marzo
+             </td>
+             <td style="font-size:10; color:#fff; background:#BD0926;">
+                Abril
+             </td>
+             <td style="font-size:10; color:#fff; background:#BD0926;">
+                Mayo
+             </td>
+             <td style=" font-size:10; color:#fff; background:#BD0926;">
+                Junio
+             </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>2</td>
+              <td>5</td>
+              <td>1</td>
+              <td>3 </td>
+              <td>7</td>
+            </tr>
+            
+          </table>
+           
+          </ul>
+
+          
+        </div>
+      </div>
+    </div>
+    <!--FIN-->
+  </transclusion>
+</script>
+
+<script type="text/ng-template" id="con12">
+  <transclusion
+    audio="d18"
+    <!--INICIO-->
+    <div  class="text-center scale-img">
+      <div style="display: inline-block; position: relative;">
+        <img class="img-responsive "style="width:300%; "src="{{ $root.resources }}/tableronino.png"
+             alt="Pizarra o tablero, con un lápiz feliz porque esta explicando cuales son las propiedades de la suma."/>
+          <div  style="position: absolute; top: 150px;  left: 100px;  color: #000; font-size: 18px;">
+          <ul style="text-align: left;">
+            <h5 style="width:80%; font-size:19px;" class="text-center">Con los datos ordenados en una tabla podemos extraer información con preguntas como:</h5>
+
+            <li style="width:70%; margin-left:5%;"> ¿En qué mes del año hay más niños de cumpleaños?   Junio</li><br>
+            <li  style="width:70%; margin-left:5%;" > ¿En qué mes del año hay menos niños de cumpleaños? Abril</li><br>
+            <li  style="width:70%; margin-left:5%;">¿En el mes de mayo y junio cuantos están de cumpleaños? 10</li>
+          </ul>
+
+          
+        </div>
+      </div>
+    </div>
+    <!--FIN-->
+  </transclusion>
+</script>
+
+
+
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+	<script src="../scripts/jquery.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

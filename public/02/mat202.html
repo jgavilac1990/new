@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="mat202">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+	<style>
+
+	.con5-table{
+		width: 100%;
+		font-size: 18px;
+		cursor: pointer;
+	}
+
+	.con5-table tr td{
+		border: 2px solid #BD0926;
+		text-align: center;
+	}
+
+	</style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="mat" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<click-images 
+			options="data"
+			title="¿Qué son los números?"
+			audio="c1"
+			description="Los números  representan en nuestra mente las cantidades, las cuales nos sirven para resolver situaciones de la vida cotidiana;  como cuando compras manzanas, debes decir la cantidad que vas a comprar, también son útiles a la hora de contar animales, personas, objetos, dinero, medir, etc."
+			instruction="Haz clic sobre cada imagen y escucha.">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="con2">
+		<watch 
+			options="data"
+			title="Los números pares"
+			audio="c2"
+			description="Los números pares se caracterizan porque se pueden dividir en grupos de dos en dos. Por ejemplo el número ocho se puede dividir en cuatro grupos de dos."
+			instruction="Observa  cuatro grupos de dos.">
+		</watch>
+	</script>
+
+	<script type="text/ng-template" id="con3">
+		<watch 
+			options="data"
+			title="Los números impares"
+			audio="c3"
+			description="Los números impares NO se pueden dividir en grupos de dos en dos. Por ejemplo, el número siete se puede dividir en tres grupos de dos y un grupo de uno."
+			instruction="Observa tres grupos de dos y un grupo de uno.">
+		</watch>
+	</script>
+
+	<script type="text/ng-template" id="con4">
+		<transclusion 
+			audio="c4"
+			description="Los números pares siempre terminan con un dígito de:">
+			<!--INICIO-->
+			<div class="text-center">
+				<img style="display: inline-block; max-width: 10%;"
+					class="img-responsive" src="{{ $root.resources + '/' + num + '.png' }}" alt="{{ num }}" ng-repeat="num in numbers">
+			</div>
+
+			<div class="block text-center">Son números pares</div>
+			<div class="block-content text-center" style="font-size: 30px">
+				2, 4, 6, 8, 10, 12, 14 ,16, 18, 20, 22, 24, 26, 28, 30
+			</div>
+			<!--FIN-->
+		</transclusion>
+	</script>
+
+	<script type="text/ng-template" id="con5">
+		<transclusion 
+			audio="c5"
+			description="Los números impares siempre terminan con un dígito de:"
+			instruction="Haz clic sobre la tabla y escucha">
+
+			<!--INICIO-->
+			<div class="text-center">
+				<img style="display: inline-block; max-width: 10%;"
+					class="img-responsive" src="{{ $root.resources + '/' + num + '.png' }}" alt="{{ num }}" ng-repeat="num in numbers">
+			</div>
+
+			<div class="block text-center">Son números impares</div>
+			<div class="block-content text-center" style="font-size: 30px">
+				1, 3, 5, 7, 9, 11, 13 ,15, 17, 19, 21, 23, 25, 27, 29, 31
+			</div>
+
+			<!--tabla-->
+			<table class="con5-table" play="audio-table" on="click" ng-click="goNext()">
+				<tr>
+					<td ng-repeat="num in odd"> {{ num }}<br>Número Impar </td>
+				</tr>
+				<tr>
+					<td ng-repeat="num in even"> {{ num }}<br>Número Par </td>
+				</tr>
+			</table>
+
+			<!--audio-->
+			<audio id="audio-table" preload="auto">
+				<source src="{{ $root.resources + '/tabla.mp3' }}" type="audio/mpeg">
+			</audio>
+
+			<!--FIN-->
+		</transclusion>
+	</script>
+
+	<script type="text/ng-template" id="act1">
+		<letter-soup 
+			audio="a1"	
+			description="Busca los números del listado de la derecha escritos en la sopa de letras. Cuando encuentres uno presiona la primera y última letra del número encontrado y luego presiona el número en el listado. Las palabras pueden estar en forma horizontal o vertical."
+			options="data">
+		</letter-soup>
+	</script>
+
+	<script type="text/ng-template" id="act2">
+		<pairs-inputs
+			audio="a2"	
+			img="nino_1"
+			alt="Niño de camisa azul,  pantaloneta azul oscura, zapatos cafés, cabello rubio  y sonriendo,  preguntándose  ¿cómo se escriben los números?"
+			description="Convierte a número las siguientes cantidades. Haz clic sobre el nombre del número si quieres escucharlo."
+			options="data">
+		</pairs-inputs>
+	</script>
+
+	<script type="text/ng-template" id="act3">
+		<pairs-inputs
+			audio="a3"	
+			img="nino_2"
+			alt="Niña de cabello café,  blusa verde y morada,  pantalón verde oliva y zapatos fucsia preguntándose ¿Cómo se escriben los números?"
+			description="Convierte en letras  los siguientes números, inténtalo antes de colocar tú  puntero sobre el número, haz clic sobre el si quieres escucharlo."
+			options="data">
+		</pairs-inputs>
+	</script>
+
+	<script type="text/ng-template" id="act4">
+		<drop-boxes 
+			audio="a4"	
+			description="Arrastra a las casillas y ordena los siguientes números, clasifícalos en pares e impares."
+			options="data">
+		</drop-boxes>
+	</script>
+
+	<script type="text/ng-template" id="act5">
+		<select-words 
+			audio="a5"	
+			description="Haz clic sobre cada flecha y selecciona la opción correcta para completar el texto."
+			img="nino-estudiando"
+			alt="Niño acostado boca abajo leyendo un libro"
+			options="data">
+		</select-words>
+	</script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

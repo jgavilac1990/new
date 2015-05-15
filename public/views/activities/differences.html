@@ -1,0 +1,64 @@
+<div class="liz-differences full-height shadow">
+
+<!-- FACES -->
+<img flash="rightAnswer" class="face" src="../resources/common/icon_right.png" alt="Respuesta Correcta"/>
+<img flash="wrongAnswer" class="face" src="../resources/common/icon_wrong.png" alt="Respuesta Incorrecta. Sigue intentando"/>
+<!-- END FACES -->
+
+	<!--Descripción-->
+	<div class="block">
+		<p class="clearfix">
+		<div class="help">
+		<img src="../resources/common/iconoayuda.png" alt="ícono ayuda"/>
+		<span class="tooltip8">
+		<img  class="img-rounded" style="width:100%;" src="../resources/common/ayuda.gif"/>
+	    </span>
+		</div>
+		<div class="lastear">
+		<img ng-show="audio" class="icon-play-description"src="../resources/common/icono-oido.png" alt="ícono escuchar" play="audio-instruction" on="click"/>
+		<span class="tooltip6">
+	    <img  class="img-rounded" style="width:100%;" src="../resources/common/sonido.gif"/>
+	    </span>
+		</div>
+		<div class="select">
+		<img src="../resources/common/icono seleccion.png" alt="ícono seleccion"/>
+		<span class="tooltip6"><img  class="img-rounded" style="width:100%;" src="../resources/common/click.gif"/>
+        </span>
+		</div>
+		<div class="observar">
+		<img ng-show="watch" src="../resources/common/iconoobservar.png" alt="ícono de observación"/>
+		<span class="tooltip16">
+        <img  class="img-rounded" style="width:100%;" src="../resources/common/observar.gif"/>
+        </span>
+		</div>
+		<span>{{ description }}</span>
+		</p>
+	</div> <!--/.block-->
+
+	<!--audio-->
+	<audio id="audio-instruction" preload="auto">
+		<source src="{{ $root.resources + '/'  + audio + '.mp3' }}" type="audio/mpeg">
+	</audio>
+
+	<div class="block-content">
+
+		<div class="images">
+			<img ng-repeat="img in images" class="img-responsive" src="{{ $root.resources + '/' + img.src }}" alt="{{ img.alt }}" title="{{ img.title }}">
+		</div> <!--.images-->
+
+		<div class="inputs">
+			<input ng-change="verify()" ng-repeat="item in inputs" ng-model="item.input" class="input-primary" type="text">
+		</div> <!--.inputs-->
+
+	</div> <!--/.block-content-->
+
+</div> <!--/.liz-differences-->
+
+<!-- CALIFICATIONS -->
+<div ng-show="success">
+	<div data-congratulations></div>
+</div>
+
+<div ng-show="failure">
+	<div data-failure></div>
+</div>

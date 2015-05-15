@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="mat205">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+	<style>
+
+	.more-height{
+		max-height: 400px !important;
+	}
+
+	</style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="mat" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<transclusion 
+			instruction="Haz clic sobre el recuadro y escucha."
+			audio="c1"
+			description="Es sumar un mismo número en una cantidad determinada de veces.   Cuando multiplicas estás realizando una suma en su forma más corta. La multiplicación te permite calcular por ejemplo cuántos huevos hay en 5 canastas o cuántos zapatos hay en tres pares."
+			title="¿Qué es la  multiplicación?">
+			<!--INICIO-->
+			<div style="width: 50%; float: left; text-align: center">
+				<img class="img-responsive" style="display: inline-block; margin-bottom: 20px;" src="{{ $root.resources + '/nina-1.png' }}" alt="Niña de cabello rubio, vestido de cuadros azules, zapatos  fucsias, con un bolso escolar fucsia y con cinco flores en las manos, esta alegre pensando en que con la multiplicación puedes resolver  situaciones de la vida cotidiana.">
+			</div>
+			<div style="width: 50%; float: left; text-align: center">
+				<img class="img-responsive" style="display: inline-block; cursor: pointer;" ng-click="activateNext()" play="audio-1" on="click" 
+					src="{{ $root.resources + '/multiplicacion-1.png' }}" alt="2 por 3 es igual 6. Es decir, dos más dos más dos es igual a 6.">
+			</div>
+
+			<!--audio element-->
+			<audio id="audio-1" preload="auto">
+				<source src="{{ $root.resources + '/dosportres.mp3' }}" type="audio/mpeg">
+			</audio>
+			<!--FIN-->
+		</transclusion>
+	</script>
+
+	<script type="text/ng-template" id="con2">
+		<click-images 
+			options="data"
+			audio="c2"
+			description="Ejemplo: 4 X 3 = 12, es decir 4+4+4 = 12."
+			instruction="Haz clic sobre la imagen y escucha.">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="act1">
+		<operation-input 
+			options="data"
+			audio="a1"
+			description="Observa con atención la multiplicación de Sofía y Felipe, escribe en los cuadros vacíos según el número de elementos y realiza la multiplicación  al final.">
+		</operation-input>
+	</script>
+
+	<script type="text/ng-template" id="act2">
+		<giraffe 
+			audio="a2"
+			description="Observa la multiplicación que debes realizar, y haz clic en el número  que consideras es el resultado.">
+		</giraffe>
+	</script>
+
+	<script type="text/ng-template" id="act3_1">
+		<transclusion 
+			audio="a31"
+			description="Haz clic sobre la imagen para  realizar las multiplicaciones." >
+			<!--INICIO-->
+
+			<div class="text-center">
+				<img ng-click="goNext()"
+					class="img-responsive" src="{{ $root.resources + '/sabes-multiplicar.png' }}" 
+					style="display: inline-block; cursor: pointer;"
+					alt="Niña de cabello rojo, vestido rosado, camisa café y zapatos Café, preguntando ¿Sabes multiplicar? Demuéstralo">
+			</div>
+
+			<!--FIN-->
+		</transclusion>
+	</script>
+
+	<script type="text/ng-template" id="act3_2">
+		<chalkboard 
+			options="data"
+			audio="a32"
+			description="Selecciona el nivel de dificultad.">
+		</chalkboard>
+	</script>
+
+	<script type="text/ng-template" id="act4_1">
+		<complete-words 
+			options="options" 
+			audio="a41" 
+			description="Resuelve las siguientes multiplicaciones y escribe el resultado en el espacio vacío.">
+		</complete-words>	
+	</script>
+
+	<script type="text/ng-template" id="act4_2">
+		<complete-words 
+			options="options" 
+			audio="a42" 
+			description="Resuelve las siguientes multiplicaciones y escribe el resultado en el espacio vacío.">
+		</complete-words>	
+	</script>
+
+	<script type="text/ng-template" id="act4_3">
+		<complete-words 
+			options="options" 
+			audio="a43" 
+			description="Resuelve las siguientes multiplicaciones y escribe el resultado en el espacio vacío.">
+		</complete-words>	
+	</script>
+
+	<script type="text/ng-template" id="act4_4">
+		<complete-words 
+			options="options" 
+			audio="a44" 
+			description="Resuelve las siguientes multiplicaciones y escribe el resultado en el espacio vacío.">
+		</complete-words>	
+	</script>
+
+	<script type="text/ng-template" id="act4_5">
+		<complete-words 
+			options="options" 
+			audio="a45" 
+			description="Resuelve las siguientes multiplicaciones y escribe el resultado en el espacio vacío.">
+		</complete-words>	
+	</script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

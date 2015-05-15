@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="esp204">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="esp" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<slide-show-character 
+			options="data"
+			instruction="Haz clic sobre las flechas e imagina un cuento a partir de las imágenes presentadas."
+			description="El cuento es una forma breve de narración expresada en forma oral o escrita. En el cuento las historias pueden ser reales o imaginarias."
+			audio="C1"
+			title="¿Qué es el cuento?"
+			mainimg="princesa.png">
+
+		</slide-show-character>
+	</script>
+
+	<script type="text/ng-template" id="con2">
+		<show-concepts-text 
+			options="data"
+			instruction="Haz clic sobre cada número y descubre las partes del cuento."
+			description="El cuento tiene tres partes:"
+			title="¿Cuáles son las partes del cuento?"
+			audio="C2"></show-concepts-text>
+	</script>
+
+	<script type="text/ng-template" id="con3">
+		<change-style-select 
+			options="data"
+			description="Haz clic sobre las partes del cuento y las podrás identificar en el cuento “Caperucita roja”"
+			audio="C3"
+			title-block="Caperucita roja"
+			mainimg="caracaperusita.png"
+			bgimg="libro.png">
+		</change-style-select>
+	</script>
+
+	<script type="text/ng-template" id="act1">
+		<change-style-click 
+			options="data"
+			description="Lee atentamente el siguiente cuento, y luego deberás marcar con el color azul el párrafo donde está el inicio del cuento, con el rojo el nudo y con el verde el desenlace."
+			instruction="Para marcar las partes en el cuento, haz clic sobre el círculo y luego selecciona el párrafo correspondiente."
+			audio="A1"
+			title-block="El árbol mágico"
+			mainimg="arbol-encantado.png"
+			></change-style-click>
+	</script>
+
+   <script type="text/ng-template" id="act2">
+		<group-complete-words options="options" audio="A2" description="Lee atentamente, haz clic  sobre cada línea y escribe las palabras que hacen falta para completar el cuento." title-block="Palabras">  </group-complete-words>		
+	</script>
+	
+
+	<script type="text/ng-template" id="act3">
+		<group-complete-words  options="options" audio="A3" description="Después de haber leído atentamente el anterior cuento, haz clic sobre las líneas y completa las siguientes oraciones."></group-complete-words>
+	</script>
+	
+	<script type="text/ng-template" id="act4">
+		<group-complete-yes-not  options="options" audio="A4" description="Después de haber leído atentamente el cuento “Loly la oveja”, haz clic en SI o NO de acuerdo a la afirmación"></group-complete-yes-not>
+	</script>
+
+	<script type="text/ng-template" id="act5">
+		<group-complete-text-free  options="options" audio="A5" description="Es hora de crear tu propio cuento, haz clic en los recuadros para escribir el título y la historia siguiendo la secuencia indicada en cada uno de ellos."></group-complete-text-free>
+	</script>
+	
+	<script type="text/ng-template" id="act6">
+		<group-complete-free-conditions  options="options" audio="A6" description="Haz clic sobre el recuadro en blanco y escribe un cuento corto teniendo en cuenta las siguientes palabras: conejo, zanahoria, bosque y lobo."></group-complete-free-conditions>
+	</script>
+
+	<script type="text/ng-template" id="act7">
+		<complementary  options="options" audio="A7" description="Haz clic sobre los libros, y visitarás una página web en la que podrás repasar los contenidos vistos en esta lección."></complementary>	
+	</script>
+
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

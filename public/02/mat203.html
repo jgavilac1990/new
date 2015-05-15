@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="mat203">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="mat" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<click-images 
+			options="data"
+			title="¿Qué es la suma?"
+			audio="c1"
+			description="Es juntar dos o más cosas para saber cuántas hay en total, esto permite conocer la totalidad de las cosas. Por ejemplo cuando juntas dos peras y tres manzanas, se conforman cinco frutas. Ejemplo:"
+			instruction="Haz clic sobre la imagen y escucha.">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="con2">
+		<transclusion 
+			instruction="Haz clic en pasos para ver el proceso"
+			audio="c2"
+			description="Ubica un número arriba del otro de tal manera que, las centenas, las decenas y las unidades queden alineadas así: (U: unidades, D: decenas, C: centenas)"
+			title="Ejemplo resuelto: sumar llevando con dos o más dígitos">
+			<!--INICIO-->
+			<div style="width: 33%; float: left;">
+				<img class="img-responsive" src="{{ $root.resources + '/presentacion-suma.png' }}" alt="{{ alt }}">
+			</div>
+			<div style="width: 33%; float: left;">
+				<img class="img-responsive" src="{{ $root.resources + '/tabla_cdu.png' }}" alt="{{ alt }}">
+			</div>
+			<div style="width: 33%; float: left;">
+				<button ng-click="goNext()" class="btn-primary" style="margin-top: 130px;">Pasos</button>
+			</div>
+			<!--FIN-->
+		</transclusion>
+	</script>
+
+	<script type="text/ng-template" id="con3">
+		<click-images 
+			options="data"
+			audio="c3"
+			description="Suma primero los números correspondientes a las unidades (9 + 3 = 12). Este número es más grande que 10, entonces escribe un uno arriba de la columna correspondiente a las decenas y escribe el dos debajo de la línea en la columna correspondiente a las unidades así:"
+			instruction="Haz clic sobre la imagen.">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="con4">
+		<click-images 
+			options="data"
+			audio="c4"
+			description="Suma los dígitos correspondientes a las decenas (1 + 2 + 3 = 6) y ubica el resultado debajo de la línea en la columna correspondiente a las decenas."
+			instruction="Haz clic sobre la imagen.">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="con5">
+		<click-images 
+			options="data"
+			audio="c5"
+			description="Suma los números correspondientes a la columna de las centenas (5 + 7 = 12) y ubica el 12 debajo de la línea delante del otro número debajo de la línea. Como ya no tienes con quien sumar haz terminado la suma."
+			instruction="Haz clic sobre la imagen.">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="act1">
+		<operation-input 
+			options="data"
+			audio="a1"
+			description="Observa con atención la suma de Pepito y Luis, escribe en los cuadros vacíos según el número de elementos y  realiza la suma al final.">
+		</operation-input>
+	</script>
+
+	<script type="text/ng-template" id="act2_1">
+		<transclusion 
+			audio="a21"
+			description="Haz clic sobre la imagen para realizar las sumas." >
+			<!--INICIO-->
+
+			<div class="text-center">
+				<img ng-click="goNext()"
+					class="img-responsive" src="{{ $root.resources + '/nina.png' }}" 
+					style="display: inline-block; cursor: pointer;"
+					alt="Imagen de una niña con vestido azul, ojos azules, zapatos morados y cabello morado, que hace la pregunta ¿Sabes sumar? Demuéstralo">
+			</div>
+
+			<!--FIN-->
+		</transclusion>
+	</script>
+
+	<script type="text/ng-template" id="act2_2">
+		<chalkboard 
+			options="data"
+			audio="a22"
+			description="Haz clic sobre el nivel de dificultad para comenzar." >
+		</chalkboard>
+	</script>
+
+	<script type="text/ng-template" id="act3_1">
+		<complete-words 
+			options="options" 
+			audio="a31" 
+			description="Resuelve las siguientes sumas y escribe el resultado en el espacio vacío.">
+		</complete-words>	
+	</script>
+
+	<script type="text/ng-template" id="act3_2">
+		<complete-words 
+			options="options" 
+			audio="a32" 
+			description="Resuelve las siguientes sumas y escribe el resultado en el espacio vacío.">
+		</complete-words>	
+	</script>
+
+	<script type="text/ng-template" id="act3_3">
+		<complete-words 
+			options="options" 
+			audio="a33" 
+			description="Resuelve las siguientes sumas y escribe el resultado en el espacio vacío.">
+		</complete-words>	
+	</script>
+
+	<script type="text/ng-template" id="act3_4">
+		<complete-words 
+			options="options" 
+			audio="a34" 
+			description="Resuelve las siguientes sumas y escribe el resultado en el espacio vacío.">
+		</complete-words>	
+	</script>
+
+	<script type="text/ng-template" id="act3_5">
+		<complete-words 
+			options="options" 
+			audio="a35" 
+			description="Resuelve las siguientes sumas y escribe el resultado en el espacio vacío.">
+		</complete-words>	
+	</script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

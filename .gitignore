@@ -1,0 +1,16 @@
+# Ingnoración de archivos
+
+# Linux
+
+app
+bower_components
+node_modules
+vendor
+.idea
+bower.json
+config.coffee
+package.json
+.bowerrc
+.dropbox
+.editorconfig
+.jshintrc

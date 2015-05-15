@@ -1,0 +1,88 @@
+<div class="click-images shadow clearfix" ng-class="isBottom ? '' : 'full-height'">
+	<div ng-if="isBottom" class="block">
+		<div class="clearfix">
+		    <div class="help">
+			<img src="../resources/common/iconoayuda.png" alt="ícono ayuda"/>
+			<span class="tooltip8">
+		    <img  class="img-rounded" style="width:100%;" src="../resources/common/ayuda.gif"/>
+		    </span>
+			</div>
+			<div class="lastear">
+			<img ng-show="audio" class="icon-play-description"src="../resources/common/icono-oido.png" alt="ícono escuchar" play="audio-instruction" on="click"/>
+			<span class="tooltip6">
+		    <img  class="img-rounded" style="width:100%;" src="../resources/common/sonido.gif"/>
+		    </span>
+			</div>
+			<!--aquí va lo que se ponga dentro de la directiva-->
+			<div>
+				<h1 ng-show="title">{{ title }}</h1>
+				<p ng-bind-html="sanitize(description)"></p>
+			</div>
+		</div>
+	</div>
+
+	<div ng-if="! isBottom" class="block">
+		<div class="clearfix">
+		    <div class="help">
+			<img src="../resources/common/iconoayuda.png" alt="ícono ayuda"/>
+			<span class="tooltip8">
+		    <img  class="img-rounded" style="width:100%;" src="../resources/common/ayuda.gif"/>
+		    </span>
+			</div>
+			<div class="lastear">
+			<img ng-show="audio" class="icon-play-description"src="../resources/common/icono-oido.png" alt="ícono escuchar" play="audio-instruction" on="click"/>
+			<span class="tooltip6">
+		    <img  class="img-rounded" style="width:100%;" src="../resources/common/sonido.gif"/>
+		    </span>
+			</div>
+			<div class="select">
+			<img src="../resources/common/icono seleccion.png" alt="ícono seleccion"/>
+			<span class="tooltip6"><img  class="img-rounded" style="width:100%;" src="../resources/common/click.gif"/>
+            </span>
+			</div>
+			<div class="observar">
+			<img ng-show="watch" src="../resources/common/iconoobservar.png" alt="ícono de observación"/>
+			<span class="tooltip16">
+            <img  class="img-rounded" style="width:100%;" src="../resources/common/observar.gif"/>
+            </span>
+			</div>
+			<span>{{ instruction }}</span>
+		</div>
+	</div>
+	
+	<!--audio-->
+	<audio id="audio-instruction" preload="auto">
+		<source src="{{ $root.resources + '/'  + audio + '.mp3' }}" type="audio/mpeg">
+	</audio>
+
+	<div class="block-content vertical-align">
+
+		<div ng-show="img" class="additional-img">
+			<img class="img-responsive" src="{{ $root.resources + '/' + img + '.png' }}" alt="{{ alt }}">
+		</div> <!--.additional-img-->
+
+		<div class="items {{ img ? 'reduced' : '' }}">
+			<div class="item scale1" ng-repeat="item in options" ng-click="verify(item)" play="audio-{{ item.audio }}" on="click" style="{{ getStyles() }}">
+				<!--audio-->
+				<audio id="audio-{{ item.audio }}" preload="auto">
+					<source src="{{ $root.resources + '/'  + item.audio + '.mp3' }}" type="audio/mpeg">
+				</audio>
+				
+				<!--img-->
+				<img ng-hide="item.hideImg" class="img-responsive {{ item.customClass }}" 
+					title="{{ item.title ? item.title :'' }}"
+					src="{{ $root.resources + '/' + item.resource + '.' + item.type }}" alt="{{ item.alt ? item.alt : item.resource }}">
+				<p class="{{ item.textClass }}" ng-bind-html="sanitize(item.text)"></p>
+				<div ng-show="item.number" class="number">{{ item.number }}</div>
+			</div>
+		</div> <!--.items-->
+	</div> <!--.block-content-->
+
+</div>
+
+<div ng-if="isBottom" class="block bottom">
+	<p class="clearfix">
+	<img ng-hide="priority" src="../resources/common/icono seleccion.png" alt="ícono seleccionar"/>
+	<span>{{ instruction }}</span>
+	</p>
+</div>

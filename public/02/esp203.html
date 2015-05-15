@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="esp203">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="esp" ng-include src="'../views/common/include.html'"></div>
+
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<show-concepts-character 
+			options="data"
+			instruction="Haz clic sobre los círculos y conoce más sobre los medios de comunicación. example gregory1308"
+			description="Recordemos que los medios de comunicación son aquellas herramientas que ofrecen información sobre las cosas que suceden en nuestro al rededor y en el mundo. Existen distintos medios de comunicación, los cuales se pueden dividir en: medios audiovisuales y medios impresos."
+			audio="C1"
+			mainimg="cuadro-inicio.png">
+
+		</show-concepts-character>
+	</script>
+
+	<script type="text/ng-template" id="con2">
+		<click-images 
+			options="data"
+			description="Los  medios audiovisuales comprenden aquellos aparatos que emplean imágenes y/o sonidos para transmitir la información, como por ejemplo la televisión y el cine."
+			instruction="Haz clic sobre cada número y descubre algunos ejemplos de medios de comunicación audiovisuales."
+			title="Medios audiovisuales"
+			audio="C2">
+		></click-images>
+	</script>
+	
+	<script type="text/ng-template" id="con3">
+		<click-images 
+			options="data"
+			description="Incluye todas aquellas publicaciones impresas en papel,  su objetivo principal es informar; dentro de este grupo de medios se encuentran las revistas,  los periódicos, los folletos y los libro."
+			instruction="Haz clic sobre cada número y descubre algunos ejemplos de medios de comunicación impresos."
+			title="Medios impresos"
+			audio="C3">
+		></click-images>
+	</script>
+
+	<script type="text/ng-template" id="act1">
+		<group-complete-sound  options="options" audio="A1" description="Haz clic sobre cada recuadro  en blanco y escribe de acuerdo a la imagen si es un medio AUDIOVISUAL o IMPRESO."></group-complete-sound>
+	</script>
+	
+	<script type="text/ng-template" id="act2">
+		<crossword 
+			options="data" 
+			description="Haz clic  sobre cada recuadro en blanco y completa el crucigrama de acuerdo a las pistas."
+			audio="A2">
+		</crossword>	
+	</script>
+
+	<script type="text/ng-template" id="act3">
+		<puzzle2 
+			options="data"
+			audio="A">
+			description="Observa con atención y arrastra cada círculo hacia las diferencias que encuentres en la portada del periódico con respecto a la pantalla del televisor.">
+		</puzzle2>
+	</script>
+	
+	<script type="text/ng-template" id="act4">
+		<group-complete-text  options="options" audio="A4" description="Haz clic sobre los recuadros en blanco y escribe las letras de manera que formen el nombre de un medio de comunicación."></group-complete-text>
+	</script>
+
+	<script type="text/ng-template" id="act5">
+		<group-inputs
+			options="data" 
+			description="Con la ayuda de tus padres, escribe en cada recuadro tres objetos que cumplan con la propiedad indicada."
+			audio="A5">
+		</group-inputs>
+	</script>
+
+	<script type="text/ng-template" id="act6">
+		<complementary  options="options" audio="A6" description="Haz clic sobre cada libro, y visitarás algunas páginas web en las que podrás repasar los contenidos vistos en esta lección."></complementary>	
+	</script>
+
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

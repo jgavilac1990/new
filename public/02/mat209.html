@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="mat209">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+	<style>
+
+	/* Conceptualización 2*/
+	#div-border { 
+	border-left: 4px solid #BD0926; 
+	width:1px; 
+	height:345px; 
+	margin-left: 40%;
+	} 
+	.titulo3{
+	position: absolute;
+	font-family: "Century Gothic";
+	font-size: 35px;
+	line-height: 1;
+	width: 40%;
+	height: 30%;
+
+	left: 71.5%;
+	color: #BD0926;
+}
+.titulo2{
+	position: absolute;
+	font-family: "Century Gothic";
+	font-size: 35px;
+	line-height: 1;
+	width: 40%;
+	height: 30%;
+
+	left: 41%;
+	color: #BD0926;
+}
+.titulo1{
+	position: absolute;
+	font-family: "Century Gothic";
+	font-size: 35px;
+	line-height: 1;
+	width: 40%;
+	height: 30%;
+	top: 85%;
+	left: 6.5%;
+	color: #BD0926;
+}		
+
+
+/* Conceptualización 1*/
+    .img-scale{
+      /*transition*/
+      -webkit-transition:all 0.4s;
+      -moz-transition:all 0.4s;
+      -o-transition:all 0.4s;
+      transition:all 0.4s;
+    }
+
+    .img-scale:hover{
+      /*transform*/
+      -webkit-transform:scale(1.1);
+      -moz-transform:scale(1.1);
+      -ms-transform:scale(1.1);
+      -o-transform:scale(1.1);
+      transform:scale(1.1);
+    }
+/* Conceptualización 2*/
+    .scale-imges {
+            cursor: pointer;
+            transition: all 0.4s;
+            -webkit-transition: all 0.4s;
+        }
+
+    .scale-imges:hover {
+            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+        }
+
+	</style>
+    
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="mat" ng-include src="'../views/common/include.html'"></div>
+		<script type="text/ng-template" id="con1">
+		    <transclusion 
+		      audio="d6"
+		      mouse="true"
+		      description="Los sólidos geométricos son figuras que ocupan un lugar en el espacio y que se caracterizan por  que se les puede medir el largo, el ancho y el alto.
+		          La esfera, el cilindro, el cono, el prisma, el cubo y la pirámide son cuerpos geométricos. "
+		      title="¿Qué son sólidos geométricos?"
+		      instruction="Desliza el mouse sobre la imagen para aumentar su tamaño."
+		      <!--INICIO-->
+		        <div  style="text-align: center; margin-top:5%; ">
+			        <img class="img-responsive img-scale" style="display: inline-block; max-height: 130px; margin-left:-85%; border: 2px solid; border-radius:2px; color:#BD0926;" src="{{ $root.resources + '/esfera.png' }}" alt="10 manzanas rojas y una niña de pantalón verde. Chaqueta verde menta y bufanda café con el número 9999 alrededor de su cabeza">
+			        <div  style="margin-top:1%;">
+			           <p style=" border: 2px solid #BD0926; text-align: center; border-radius: 2%; width: 7.4em; height: 2em; color:#fff; margin-left:1%; background: #BD0926; font-size:110% "><b>Esfera<b>
+			           </p>
+			        </div>
+		        </div>
+		        <div  style="text-align: center; margin-top:5%; ">
+		            <img class="img-responsive img-scale" style="display: inline-block; max-height: 130px; margin-left:-51.5%; margin-top:-36.5%; border: 2px solid; border-radius:2px; color:#BD0926;" src="{{ $root.resources + '/cilindro.png' }}" alt="10 manzanas rojas y una niña de pantalón verde. Chaqueta verde menta y bufanda café con el número 9999 alrededor de su cabeza">
+
+		             <div  style="margin-top:-12.6%;">
+		                <p style=" border: 2px solid #BD0926; text-align: center; border-radius: 2%; width: 7.4em; height: 2em; color:#fff; margin-left:17.7%; background: #BD0926; font-size:110% "><b>Cilindro<b>
+		                </p>
+		            </div>
+		        </div>
+			    <div  style="text-align: center; margin-top:5%; ">
+			        <img class="img-responsive img-scale" style="display: inline-block; max-height: 130px; margin-left:-17%; margin-top:-46.4%; border: 2px solid; border-radius:2px; color:#BD0926;" src="{{ $root.resources + '/cono.png' }}" alt="10 manzanas rojas y una niña de pantalón verde. Chaqueta verde menta y bufanda café con el número 9999 alrededor de su cabeza">
+			        <div  style="margin-top:-17.6%;">
+			           <p style=" border: 2px solid #BD0926; text-align: center; border-radius: 2%; width: 7.4em; height: 2em; color:#fff; margin-left:34.7%; background: #BD0926; font-size:110% "><b>Cono<b>
+			            </p>
+			        </div>
+			    </div>
+		        <div  style="text-align: center; margin-top:5%; ">
+		            <img class="img-responsive img-scale" style="display: inline-block; max-height: 130px; margin-left:17%; margin-top:-56.4%; border: 2px solid; border-radius:2px; color:#BD0926;" src="{{ $root.resources + '/cubo.png' }}" alt="10 manzanas rojas y una niña de pantalón verde. Chaqueta verde menta y bufanda café con el número 9999 alrededor de su cabeza">
+		            <div  style="margin-top:-22.6%;">
+		           		<p style=" border: 2px solid #BD0926; text-align: center; border-radius: 2%; width: 7.4em; height: 2em; color:#fff; margin-left:51.7%; background: #BD0926; font-size:110% "><b>cubo<b>
+		           		</p>
+		        	</div>
+		      	</div
+		      	<div  style="text-align: center; margin-top:-10%; ">
+		        	<img class="img-responsive img-scale" style="display: inline-block; max-height: 130px; margin-left:68.8%; margin-top:-60.3%; border: 2px solid; border-radius:2px; color:#BD0926;" src="{{ $root.resources + '/piramide.png' }}" alt="10 manzanas rojas y una niña de pantalón verde. Chaqueta verde menta y bufanda café con el número 9999 alrededor de su cabeza">
+		        	<div  style="margin-top:-24.4%;">
+		           		<p style=" border: 2px solid #BD0926; text-align: center; border-radius: 2%; width: 7.4em; height: 2em; color:#fff; margin-left:68.9%; background: #BD0926; font-size:110% "><b>Piramide<b>
+		           		</p>
+		        	</div>
+		      	</div>   
+		      	<div  style="text-align: center; margin-top:5%; ">
+		        	<img class="img-responsive img-scale" style="display: inline-block; max-height: 130px; margin-left:84%; margin-top:-36.8%; border: 2px solid; border-radius:2px; color:#BD0926;" src="{{ $root.resources + '/prisma.png' }}" alt="10 manzanas rojas y una niña de pantalón verde. Chaqueta verde menta y bufanda café con el número 9999 alrededor de su cabeza">
+		        	<div  style="margin-top:-12.6%;">
+		           		<p style=" border: 2px solid #BD0926; text-align: center; border-radius: 2%; width: 7.4em; height: 2em; color:#fff; margin-left:85.6%; background: #BD0926; font-size:110% "><b>Prisma<b>
+		           		</p>
+		        	</div>
+		      	</div>
+		    <!--FIN-->
+	    	</transclusion>
+  		</script>
+
+	    <script type="text/ng-template" id="con2">
+        <transclusion 
+            description="Algunos objetos que encontramos en nuestro entorno tienen cuerpos geométricos, por ejemplo una caja de cartón tiene forma de cubo, un helado forma de cono o una pelota forma de esfera. "
+            instruction="Desliza el mouse sobre cada unas de las imagenes"
+            mouse="true"
+            audio="d7">
+            <!--INICIO-->
+            <div style="">
+                <div ng-repeat="item in $parent.items" class="scale-imges " style="margin: 0  0 6px 40px; width: 25%;float: left;position: relative;"
+                    ng-mouseover="$parent.verify(item)"> 
+                    <div class="bd-1" style="float:left; margin: 5px;border: 3px solid; margin: 0 6px;">
+                        <img class="img-responsive" style="display: inline-block; width: 100%;" 
+                            src="{{ $root.resources + '/' + item.src + '.png' }}" alt="{{ item.alt }}" title="{{ item.title }}">
+                         <p class="bg-1" style="margin: 0; text-align: center; color: #fff; font-size: 20px; padding: 25px 4px;">
+                            {{ item.text }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!--FIN-->
+        </transclusion>
+    </script>
+	<script type="text/ng-template" id="con3">
+        <transclusion 
+        description="Haz clic en cada cuerpo geométrico para escuchar su nombre  y ver un ejemplo del mundo real."
+        instruction="Haz clic en cada cuerpo geométrico para escuchar su nombre"
+        audio="d8">
+        <div style="margin-left:5%;">
+	        <div style="  float: left; padding: 0 10px;">
+			    <table style="border: 4px solid #BD0926; border-radius: 2%; width: 850px; height:100px;" >
+					<tr  ng-repeat="item in $parent.items" play="audio-{{ item.number }}" on="click" ng-click="$parent.selectItem(item)" >
+						<td>
+						   <img  style="width:40%;" class="img-responsive" src="{{ $root.resources + '/cubo.png' }}" alt="Cubo">
+						</td>
+						<td>
+							<audio id="audio-{{ item.number }}" preload="auto">
+								<source src="{{ $root.resources + '/nums/no_' + item.number + '.mp3' }}" type="audio/mpeg">
+							</audio>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div style="width:35%; float: right; text-align: center; ">
+				<img  ng-show="$parent.selectedItem" class="img-responsive" style="display: inline-block; max-height: 380px; margin-left:-110%; margin-top:-110% ;" 
+						src="{{ $root.resources + '/p' + $parent.selectedItem.number + '.png' }}" alt="{{ $parent.selectedItem.alt }}">
+			</div>
+		</div> 
+		<div id="div-border"></div>  
+        </transclusion>
+    </script>
+    <script type="text/ng-template" id="con4">
+        <transclusion 
+        description="Haz clic en cada cuerpo geométrico para escuchar su nombre  y ver un ejemplo del mundo real."
+        instruction="Haz clic en cada cuerpo geométrico para escuchar su nombre"
+        audio="d8">
+        <div style="margin-left:5%;">
+	        <div style="  float: left; padding: 0 10px;">
+			    <table style="border: 4px solid #BD0926; border-radius: 2%; width: 850px; height:100px;" >
+					<tr  ng-repeat="item in $parent.items" play="audio-{{ item.number }}" on="click" ng-click="$parent.selectItem(item)" >
+						<td>
+						   <img  style="width:40%;" class="img-responsive" src="{{ $root.resources + '/esfera.png' }}" alt="Cubo">
+						</td>
+						<td>
+							<audio id="audio-{{ item.number }}" preload="auto">
+								<source src="{{ $root.resources + '/nums/no_' + item.number + '.mp3' }}" type="audio/mpeg">
+							</audio>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div style="width:35%; float: right; text-align: center; ">
+				<img  ng-show="$parent.selectedItem" class="img-responsive" style="display: inline-block; max-height: 380px; margin-left:-110%; margin-top:-110% ;" 
+						src="{{ $root.resources + '/p' + $parent.selectedItem.number + '.png' }}" alt="{{ $parent.selectedItem.alt }}">
+			</div>
+		</div> 
+		<div id="div-border"></div>  
+        </transclusion>
+    </script>
+    <script type="text/ng-template" id="con5">
+        <transclusion 
+        description="Haz clic en cada cuerpo geométrico para escuchar su nombre  y ver un ejemplo del mundo real."
+        instruction="Haz clic en cada cuerpo geométrico para escuchar su nombre"
+        audio="d8">
+        <div style="margin-left:5%;">
+	        <div style="  float: left; padding: 0 10px;">
+			    <table style="border: 4px solid #BD0926; border-radius: 2%; width: 850px; height:100px;" >
+					<tr  ng-repeat="item in $parent.items" play="audio-{{ item.number }}" on="click" ng-click="$parent.selectItem(item)" >
+						<td>
+						   <img  style="width:40%;" class="img-responsive" src="{{ $root.resources + '/cono.png' }}" alt="Cono">
+						</td>
+						<td>
+							<audio id="audio-{{ item.number }}" preload="auto">
+								<source src="{{ $root.resources + '/nums/no_' + item.number + '.mp3' }}" type="audio/mpeg">
+							</audio>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div style="width:35%; float: right; text-align: center; ">
+				<img  ng-show="$parent.selectedItem" class="img-responsive" style="display: inline-block; max-height: 380px; margin-left:-110%; margin-top:-110% ;" 
+						src="{{ $root.resources + '/p' + $parent.selectedItem.number + '.png' }}" alt="{{ $parent.selectedItem.alt }}">
+			</div>
+		</div> 
+		<div id="div-border"></div>  
+        </transclusion>
+    </script>
+     <script type="text/ng-template" id="con6">
+        <transclusion 
+        description="Haz clic en cada cuerpo geométrico para escuchar su nombre  y ver un ejemplo del mundo real."
+        instruction="Haz clic en cada cuerpo geométrico para escuchar su nombre"
+        audio="d8">
+        <div style="margin-left:5%;">
+	        <div style="  float: left; padding: 0 10px;">
+			    <table style="border: 4px solid #BD0926; border-radius: 2%; width: 850px; height:100px;" >
+					<tr  ng-repeat="item in $parent.items" play="audio-{{ item.number }}" on="click" ng-click="$parent.selectItem(item)" >
+						<td>
+						   <img  style="width:40%;" class="img-responsive" src="{{ $root.resources + '/piramide.png' }}" alt="Cono">
+						</td>
+						<td>
+							<audio id="audio-{{ item.number }}" preload="auto">
+								<source src="{{ $root.resources + '/nums/no_' + item.number + '.mp3' }}" type="audio/mpeg">
+							</audio>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div style="width:35%; float: right; text-align: center; ">
+				<img  ng-show="$parent.selectedItem" class="img-responsive" style="display: inline-block; max-height: 380px; margin-left:-110%; margin-top:-110% ;" 
+						src="{{ $root.resources + '/p' + $parent.selectedItem.number + '.png' }}" alt="{{ $parent.selectedItem.alt }}">
+			</div>
+		</div> 
+		<div id="div-border"></div>  
+        </transclusion>
+    </script>
+     <script type="text/ng-template" id="con7">
+        <transclusion 
+        description="Haz clic en cada cuerpo geométrico para escuchar su nombre  y ver un ejemplo del mundo real."
+        instruction="Haz clic en cada cuerpo geométrico para escuchar su nombre"
+        audio="d8">
+        <div style="margin-left:5%;">
+	        <div style="  float: left; padding: 0 10px;">
+			    <table style="border: 4px solid #BD0926; border-radius: 2%; width: 850px; height:100px;" >
+					<tr  ng-repeat="item in $parent.items" play="audio-{{ item.number }}" on="click" ng-click="$parent.selectItem(item)" >
+						<td>
+						   <img  style="width:40%;" class="img-responsive" src="{{ $root.resources + '/prisma2.png' }}" alt="Lego">
+						</td>
+						<td>
+							<audio id="audio-{{ item.number }}" preload="auto">
+								<source src="{{ $root.resources + '/nums/no_' + item.number + '.mp3' }}" type="audio/mpeg">
+							</audio>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div style="width:35%; float: right; text-align: center; ">
+				<img  ng-show="$parent.selectedItem" class="img-responsive" style="display: inline-block; max-height: 380px; margin-left:-110%; margin-top:-110% ;" 
+						src="{{ $root.resources + '/p' + $parent.selectedItem.number + '.png' }}" alt="{{ $parent.selectedItem.alt }}">
+			</div>
+		</div> 
+		<div id="div-border"></div>  
+        </transclusion>
+    </script>
+    <script type="text/ng-template" id="con8">
+        <transclusion 
+        description="Haz clic en cada cuerpo geométrico para escuchar su nombre  y ver un ejemplo del mundo real."
+        instruction="Haz clic en cada cuerpo geométrico para escuchar su nombre"
+        audio="d8">
+        <div style="margin-left:5%;">
+	        <div style="  float: left; padding: 0 10px;">
+			    <table style="border: 4px solid #BD0926; border-radius: 2%; width: 850px; height:100px;" >
+					<tr  ng-repeat="item in $parent.items" play="audio-{{ item.number }}" on="click" ng-click="$parent.selectItem(item)" >
+						<td>
+						   <img  style="width:40%;" class="img-responsive" src="{{ $root.resources + '/cilindro.png' }}" alt="Lata de gaseosa.">
+						</td>
+						<td>
+							<audio id="audio-{{ item.number }}" preload="auto">
+								<source src="{{ $root.resources + '/nums/no_' + item.number + '.mp3' }}" type="audio/mpeg">
+							</audio>
+						</td>
+					</tr>
+				</table>
+			</div>
+			<div style="width:35%; float: right; text-align: center; ">
+				<img  ng-show="$parent.selectedItem" class="img-responsive" style="display: inline-block; max-height: 380px; margin-left:-110%; margin-top:-110% ;" 
+						src="{{ $root.resources + '/p' + $parent.selectedItem.number + '.png' }}" alt="{{ $parent.selectedItem.alt }}">
+			</div>
+		</div> 
+		<div id="div-border"></div>  
+        </transclusion>
+    </script>
+    <script type="text/ng-template" id="con9">
+        <box-animation-figure 
+            description="Haz clic en cada cuerpo geométrico y Observa cómo se forman."
+            instruction="Desliza el mouse sobre cada unas de las imagenes"
+            mouse="true"
+            audio="d7">
+            <!--INICIO-->
+            <div style="">
+                <div ng-repeat="item in $parent.items" class="scale-imges " style="margin: 0  0 6px 40px; width: 25%;float: left;position: relative;"
+                    ng-mouseover="$parent.verify(item)"> 
+                    <div class="bd-1" style="float:left; margin: 5px;border: 3px solid; margin: 0 6px;">
+                        <img id="titulo1" class="img-responsive" style="display: inline-block; width: 100%;" 
+                            src="{{ $root.resources + '/' + item.src + '.png' }}" alt="{{ item.alt }}" title="{{ item.title }}">
+                         <p class="bg-1" style="margin: 0; text-align: center; color: #fff; font-size: 20px; padding: 25px 4px;">
+                            {{ item.text }}
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+
+            <!--FIN-->
+        </box-animation-figure>
+    </script>
+    <script type="text/ng-template" id="con10">
+        <box-animation-figure 
+            description="Haz clic en cada cuerpo geométrico y Observa cómo se forman."
+            instruction="Desliza el mouse sobre cada unas de las imagenes"
+            mouse="true"
+            audio="d7">
+            <!--INICIO-->
+            <div style="">
+                <div ng-repeat="item in $parent.items" class="scale-imges " style="margin: 0  0 6px 40px; width: 25%;float: left;position: relative;"
+                    ng-mouseover="$parent.verify(item)"> 
+                    <div class="bd-1" style="float:left; margin: 5px;border: 3px solid; margin: 0 6px;">
+                        <img class="img-responsive" style="display: inline-block; width: 100%;" 
+                            src="{{ $root.resources + '/' + item.src + '.png' }}" alt="{{ item.alt }}" title="{{ item.title }}">
+                         <p class="bg-1" style="margin: 0; text-align: center; color: #fff; font-size: 20px; padding: 25px 4px;">
+                            {{ item.text }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!--FIN-->
+        </box-animation-figure>
+    </script>
+
+    <script type="text/ng-template" id="act1">
+		<pairs options="options" description="Arrastra cada cuerpo geométrico al  nombre que corresponde." audio="act1">
+			<item>
+				<img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + resource + '.png', alt: alt }" >				
+			</item>
+			<target>
+				<div>
+					<p data-bind="text: text" class="align-children" style="min-height:80px; color:#BD0926;"></p>
+				</div>
+			</target>
+		</pairs>
+	</script>
+
+	 <script type="text/ng-template" id="act2">
+		<pairs 
+			audio="act2"
+			options="options" description="Arrastra las figuras geométricas de la primera fila, hasta el objeto de la segunda fila que tenga la misma forma.">
+			<item>
+				<img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + src1 + '.png', alt: alt1 }" >
+			</item>
+			<target>
+				<img style="width:50%;"class="img-responsive" data-bind="attr: { src: $root.resources + '/' + src2 + '.jpg', alt: alt2}" >
+			</target>
+		</pairs>
+	</script>
+
+	<script type="text/ng-template" id="act2-1">
+		<pairs 
+			audio="act2"
+			options="options" description="Arrastra las figuras geométricas de la primera fila, hasta el objeto de la segunda fila que tenga la misma forma.">
+			<item>
+				<img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + src1 + '.png', alt: alt1 }" >
+			</item>
+			<target>
+				<img style="width:50%;" class="img-responsive" data-bind="attr: { src: $root.resources + '/' + src2 + '.jpg', alt: alt2 }" >
+			</target>
+		</pairs>
+	</script>
+	<script type="text/ng-template" id="act3">
+		<drag-drop-multiples options="data" description="Arrastra hacia el recuadro los cuerpos geométricos que ruedan y los que se deslizan." audio="act3">
+			<item>
+				<img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + resource + '.png', alt: alt }">
+			</item>
+		</drag-drop-multiples>
+	</script>
+
+	<script type="text/ng-template" id="act4">
+		<puzzle4
+			options="data"
+			audio="act4"
+			description="Haz clic sobre cada uno de los cuerpos geométricos que encuentres en el escenario.">
+		</puzzle4>
+	</script>
+
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+	<script src="../scripts/jquery.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

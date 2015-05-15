@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="mat204">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+	<style>
+
+	.more-height{
+		max-height: 400px !important;
+	}
+
+	</style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="mat" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<click-images 
+			options="data"
+			title="¿Qué es la resta?"
+			audio="c1"
+			description="La resta es una operación básica de matemáticas, donde dada una cantidad se elimina una parte de ella, y dicho resultado recibe el nombre de diferencia; con la resta puedes saber cuanto dinero te queda cuando gastas comprando un helado. Ejemplo:"
+			instruction="Haz clic sobre la imagen y escucha.">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="con2">
+		<transclusion 
+			instruction="Haz clic en pasos para ver el proceso"
+			audio="c2"
+			description="Ahora vamos a ver un ejercicio sobre como restar prestando. Para ello coloca el número a restar debajo del primer número de tal manera que, las centenas, las decenas y las unidades queden alineadas. Traza una línea debajo del número inferior así."
+			title="Ejemplo: Restar con dos o más dígitos">
+			<!--INICIO-->
+			<div style="width: 50%; float: left; text-align: center">
+				<img class="img-responsive" style="display: inline-block; max-height: 300px" src="{{ $root.resources + '/cdu.png' }}" alt="niño de pelo rubio con una tabla de centenas, decenas y unidades con los números 5-8-3 y 2-2-9">
+			</div>
+			<div style="width: 50%; float: left; text-align: center">
+				<button ng-click="goNext()" style="display: inline-block; margin-top: 100px;" class="btn-primary">Pasos</button>
+			</div>
+			<!--FIN-->
+		</transclusion>
+	</script>
+
+    <script type="text/ng-template" id="con3">
+        <transclusion
+                audio="c3"
+                description="Resta el número  a las unidades del número inferior del dígito correspondiente a las unidades del número superior (3 – 9). ¿Pero no sabemos cómo hacerlo?, entonces ordena el número de tal manera que el valor superior sea más grande. Pide prestado un diez a las decenas del número superior y transforma el 3 en 13. La decena del número superior se transforma en 7 después de prestar una decena. Ahora resta 9 al 13 para obtener el resultado de 4. El 4 se coloca debajo de la línea en la columna de las unidades así:">
+
+            <div style="display: flex; justify-content: space-around">
+                <img class="img-responsive" src="{{ $root.resources }}/resta-1.png" alt="13 manzanas rojas y 9 peras verdes. Al ser restadas da como resultado 4"/>
+            </div>
+        </transclusion>
+    </script>
+
+    <script type="text/ng-template" id="con4">
+        <transclusion
+                audio="c4"
+                description="Resta los dígitos en la columna de las decenas (7 – 2 = 5) y coloca el resultado debajo de la línea en la columna de las decenas así:">
+
+            <div style="display: flex; justify-content: space-around">
+                <img class="img-responsive" src="{{ $root.resources }}/resta-2.png" alt="Siete manzanas rojas, dos peras verdes. El número cinco que es el resultado de restar siete menos dos."/>
+            </div>
+        </transclusion>
+    </script>
+
+    <script type="text/ng-template" id="con5">
+        <transclusion
+                audio="c5"
+                description="Resta los números en la columna de las centenas (5 - 2 = 3) coloca el resultado debajo de la línea en la columna de las decenas así:">
+
+            <div style="display: flex; justify-content: space-around">
+                <img class="img-responsive" src="{{ $root.resources }}/resta-3.png" alt="Cinco manzanas.  Signo menos. Dos manzanas verdes. Signo igual. El resultado de restar cinco menos dos que es igual a tres"/>
+            </div>
+        </transclusion>
+    </script>
+
+	<script type="text/ng-template" id="act1">
+		<operation-input 
+			options="data"
+			audio="a1"
+			description="Observa con atención la resta de Ana y Luis, escribe en los cuadros vacíos según el número de elementos y realiza la resta al final.">
+		</operation-input>
+	</script>
+
+	<script type="text/ng-template" id="act2_1">
+		<transclusion 
+			audio="a21"
+            arrow="true"
+			description="Haz clic sobre la imagen para realizar las restas." >
+			<!--INICIO-->
+
+			<div class="text-center">
+				<img ng-click="goNext()"
+					class="img-responsive" src="{{ $root.resources + '/dos-ninos.png' }}" 
+					style="display: inline-block; cursor: pointer;"
+					alt="Dos niños  estudiando un libro, acostados en el piso, uno de cabello rubio, camisa morada, pantalón gris, el segundo niño tiene el cabello rojo, camisa azul y pantalón negro">
+			</div>
+
+			<!--FIN-->
+		</transclusion>
+	</script>
+
+	<script type="text/ng-template" id="act2_2">
+		<chalkboard 
+			options="data"
+			audio="a22"
+			description="Selecciona el nivel de dificultad.">
+		</chalkboard>
+	</script>
+
+	<script type="text/ng-template" id="act3_1">
+		<complete-words 
+			options="options" 
+			audio="A3" 
+			description="Resuelve las siguientes restas y escribe el resultado en el espacio vacío.">
+		</complete-words>	
+	</script>
+
+	<script type="text/ng-template" id="act3_2">
+		<complete-words 
+			options="options" 
+			audio="A3" 
+			description="Resuelve las siguientes restas y escribe el resultado en el espacio vacío.">
+		</complete-words>	
+	</script>
+
+	<script type="text/ng-template" id="act3_3">
+		<complete-words 
+			options="options" 
+			audio="A3" 
+			description="Resuelve las siguientes restas y escribe el resultado en el espacio vacío.">
+		</complete-words>	
+	</script>
+
+	<script type="text/ng-template" id="act3_4">
+		<complete-words 
+			options="options" 
+			audio="A3" 
+			description="Resuelve las siguientes restas y escribe el resultado en el espacio vacío.">
+		</complete-words>	
+	</script>
+
+	<script type="text/ng-template" id="act3_5">
+		<complete-words 
+			options="options" 
+			audio="A3" 
+			description="Resuelve las siguientes restas y escribe el resultado en el espacio vacío.">
+		</complete-words>	
+	</script>
+
+	<script type="text/ng-template" id="act3_6">
+		<complete-words 
+			options="options" 
+			audio="A3" 
+			description="Resuelve las siguientes restas y escribe el resultado en el espacio vacío.">
+		</complete-words>	
+	</script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

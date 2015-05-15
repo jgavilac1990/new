@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="nat208">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+	<style>
+
+       
+
+    </style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="nat" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="comp">
+		<competences-new 
+			options="data"	
+		></competences-new>
+	</script>
+
+   <script type="text/ng-template" id="con1">
+        <transclusion
+                audio="C1"
+                title="El hombre creativo frente a las necesidades">
+        <!--INICIO-->
+             <div ng-hide="isCompleted === true">
+                <!--imagen-->
+                        <img class="img-responsive" src="{{ $root.resources + '/' + 'cavernicola.png' }}" alt="Imagen donde se muestra un cavernícola con un pedazo de madera en su mano, éste está pensando que con esa madera puede construir una fogata." style="float: left;margin-top: 0px;cursor: pointer;">
+
+                <div style="width: 50%;float: left;margin-top: 5px;margin-left: 50px;">'<h3>Una de las características que diferencia al hombre como persona que piensa de los demás seres de la creación, es su capacidad para crear y desarrollar inventos. Desde los comienzos de la aparición del hombre, éste se ha esforzado por realizar elementos que hagan más fáciles sus tareas diarias, o que resuelvan aquellos problemas que se les presentan a diario y a los que es necesario encontrarles solución.<br><br>Los primeros inventos fueron elementos realizados en piedra y madera, los cuales fueron evolucionando a través del tiempo, hasta lograr muchos de ellos la perfección.</h3>'
+                    
+                </div>
+            </div>
+
+        <!--FIN-->
+        </transclusion>
+    </script>
+	
+	<script type="text/ng-template" id="con2">
+        <show-concepts-text
+                options="data"
+                instruction="Haz clic sobre cada uno de los recuadros y conoce más sobre los inventos que han transformado nuestra forma de vivir."
+                description="La capacidad creativa del hombre le permite de manera frecuente inventar nuevas herramientas y aparatos tecnológicos.  Por eso, hacer una lista de inventos no es una tarea fácil de realizar.  Sin embargo, podemos hablar de algunos que son más significativos por el impacto e interés para la sociedad, ya que han transformado y mejorado nuestro vivir."
+                noplay="true"
+                audio="C2">
+        </show-concepts-text>
+    </script>
+
+	<script type="text/ng-template" id="act1">
+        <write-true-false
+                audio="A1"
+                options="data"
+                description="Haz clic sobre los recuadros en blanco y escribe una F si el enunciado es falso o una V si el enunciado es verdadero.">
+        </write-true-false>
+    </script>
+
+	<script type="text/ng-template" id="act2">
+    <group-complete-words options="options" audio="A2" description="Escribe el invento al cual se hace referencia en cada enunciado.">  </group-complete-words>     
+    </script>
+
+    <script type="text/ng-template" id="act3">
+        <drag-drop-multiples options="data" description="Arrastra al recuadro correspondiente cada uno de los inventos, clasificándolos en antiguos o modernos según sea el caso." audio="A3">
+            <item>
+                <img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + resource , alt: alt,title: title }">
+            </item>
+        </drag-drop-multiples>
+    </script>
+
+	<script type="text/ng-template" id="act4">
+        <letter-soup
+                audio="A4"
+                description="Busca en la sopa de letras los inventos indicados a continuación. Recuerda que para seleccionar las palabras, deberás hacer clic en la primera y última letra de la palabra."
+                options="data">
+        </letter-soup>
+    </script>
+
+    <script type="text/ng-template" id="act5">
+        <select-questions
+                options="data"
+                audio="A5"
+                description="Selecciona el invento que resolvió cada una de las necesidades planteadas a continuación."
+        </select-questions>
+    </script>
+
+    <script type="text/ng-template" id="act6">
+        <transclusion
+                audio="A6"
+                arrow="true"
+                description="Dialoga con tus padres acerca de cómo se realizaban antiguamente las actividades indicadas en la tabla. Escribe tus respuestas y luego compártelas con el facilitador.">
+        <!--INICIO-->            
+
+            <table class="table-primary" style="width: 90%;float: left;margin-top: 5px;margin-left: 5%;">
+                
+                <tr ng-repeat="item in items">
+                    <td style="padding: 0;">
+                        <p style="font-size: 20px;width: 100%;text-align: center;">{{ item.text }}</p>
+                    </td>
+                    <td style="padding: 0;">
+                        <input type="text" ng-model="item.right" style="border: none; outline: none; width: 100%; padding: 11px 8px; font-size: 20px;"/>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- CALIFICATIONS -->
+            <div ng-show="success"> <div data-congratulations></div></div>
+            <div ng-show="failure"> <div data-failure></div> </div>
+        <!--FIN-->
+        </transclusion>
+    </script>
+
+    <script type="text/ng-template" id="act7">
+		<complementary  options="options" audio="A7" description="Haz clic sobre el libro y visitarás una página web en la que podrás repasar y ampliar los contenidos vistos en esta lección."></complementary>	
+	</script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

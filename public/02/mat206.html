@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="mat206">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=2">
+
+	<link rel="stylesheet" href="../css/app.css">
+	<style>
+        .scale-img {
+            cursor: pointer;
+            transition: all 0.4s;
+            -webkit-transition: all 0.4s;
+        }
+
+        .scale-img:hover {
+            transform: scale(1.2);
+            -webkit-transform: scale(1.2);
+        }
+
+    </style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="mat" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<click-images 
+			options="data"
+			title="¿Qué  son las medidas de longitud?"
+			description="Son las que utilizamos  para medir diferentes elementos,  en el mundo que nos rodea existen diferentes herramientas  que nos permiten  establecer y/o calcular  su tamaño o extensión por ejemplo la regla o  el metro."
+			instruction="Haz clic sobre la imagen y escucha."
+			audio="D6">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="con2">
+		<click-images 
+			options="data"
+			title=""
+			description="Algunos elementos se pueden medir por ambos lados: ancho y largo, observa con atención los siguientes ejemplos:"
+			instruction="Haz clic sobre la imágen."
+			audio="D7">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="act1">
+		<images-block-mat 
+			options="data"
+			description=" Haz  clic en cada elemento  y escucha."
+			audio="D8">
+		</images-block-mat>
+	</script>
+    
+	<script type="text/ng-template" id="act2">
+        <transclusion 
+            description="Selecciona un objeto haciendo clic sobre él, llévalo sobre la regla para medirlo y escribe su longitud, solo debes escribir números."
+            title="Medimos con la Regla:"
+            instruction="Desliza el mouse sobre los recuadros y diferencia algunos ejemplos de palabras antónimas."
+            mouse="true"
+            audio="C1">
+            <!--INICIO-->
+            <div style="">
+                <div ng-repeat="item in $parent.items" style="margin: 0 20px;width: 15%;float: left;margin-bottom: 45px"
+                    ng-mouseover="$parent.verify(item)"> 
+                    <div style="{{ 'float:left;margin: 10px;border: 2px solid ' + item.color + '; margin: 2 6px;' }}">
+                        <img class="items" data-bind="sortable: items" style="display: inline-block; max-height: 140px;" 
+                            src="{{ $root.resources + '/' + item.src + '.png' }}" alt="{{ item.alt }}">
+                    </div>
+                   <div style="{{ 'float:left;margin: 10px;border: 2px solid ' + item.color + '; margin: 0 6px;' }}">
+                        <img class="img-responsive" style="display: inline-block; max-height: 140px;" 
+                            src="{{ $root.resources + '/' + item.src2 + '.png' }}" alt="{{ item.alt2 }}">
+                    </div>
+                </div>
+            </div>
+
+            <!--FIN-->
+        </transclusion>
+    </script>
+
+   <script type="text/ng-template" id="act3">
+  <drag-to-img
+    audio="act3"
+    options="data"
+    description="Arrastra el resultado de las siguientes multiplicaciones por 2 cifras.">
+  </drag-to-img>
+</script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>

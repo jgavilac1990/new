@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="esp208">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+	<style>
+
+        .img-scale{
+            /*transition*/
+            -webkit-transition:all 0.4s;
+            -moz-transition:all 0.4s;
+            -o-transition:all 0.4s;
+            transition:all 0.4s;
+        }
+
+        .img-scale:hover{
+            /*transform*/
+            -webkit-transform:scale(1.5);
+            -moz-transform:scale(1.5);
+            -ms-transform:scale(1.5);
+            -o-transform:scale(1.5);
+            transform:scale(1.5);
+        }
+
+        .esp strong {
+            color: black;
+        }
+
+    </style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="esp" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="comp">
+		<competences-new 
+			options="data"	
+		></competences-new>
+	</script>
+
+   <script type="text/ng-template" id="con1">
+        <transclusion 
+            audio="C1"
+            mouse="true"
+            description="La letra mayúscula se caracteriza por presentar un mayor tamaño y diferente forma en comparación con la letra minúscula.  Observa la siguiente imagen y recuerda la escritura tanto de las letras mayúsculas como las minúsculas."
+            instruction="Desliza el mouse sobre la imagen y observa con mayor detalle las diferencias de las letras mayúsculas y minúsculas.">
+            <!--INICIO-->
+            <div style="text-align: center">
+                <img class="img-responsive img-scale" style="display: inline-block; max-height: 380px;" src="{{ $root.resources + '/alfabeto.png' }}" alt="donde se muestran un niño feliz señalando el abecedario escrito en mayúsculas y minúsculas">
+            </div>
+            <!--FIN-->
+        </transclusion>
+    </script>
+	
+	<script type="text/ng-template" id="con2">
+        <show-concepts-text
+                options="data"
+                titletop="¿Cuándo usar las letras mayúsculas?"
+                instruction="Haz clic sobre cada uno de los círculos y conoce algunas reglas para el uso de las letras mayúsculas."
+                description="Existen varias reglas que debes tener en cuenta al momento de usar las letras mayúsculas o minúsculas, a continuación te invitamos a conocer algunas de ellas."
+                noplay="true"
+                audio="C2">
+        </show-concepts-text>
+    </script>
+
+	<script type="text/ng-template" id="act1">
+        <group-complete-sound  options="options" audio="A1" description="Escribe en el recuadro en blanco la letra mayúscula correspondiente a cada una de las letras del abecedario indicadas."></group-complete-sound>
+    </script>
+
+	<script type="text/ng-template" id="act1-2">
+        <group-complete-sound  options="options" audio="A1" description="Escribe en el recuadro en blanco la letra mayúscula correspondiente a cada una de las letras del abecedario indicadas."></group-complete-sound>
+    </script>
+
+    <script type="text/ng-template" id="act1-3">
+        <group-complete-sound  options="options" audio="A1" description="Escribe en el recuadro en blanco la letra mayúscula correspondiente a cada una de las letras del abecedario indicadas."></group-complete-sound>
+    </script>
+
+	<script type="text/ng-template" id="act1-4">
+        <complete-letters 
+            options="options" 
+            audio="A1-4" 
+            description="Escribe sobre la línea la letra mayúscula que hace falta para completar cada uno de los nombres propios.">
+        </complete-letters>     
+    </script>
+
+	<script type="text/ng-template" id="act2">
+    <group-complete-letters options="options" audio="A2" description="Haz clic sobre cada línea y escribe las letras que hacen falta para completar la carta." >  </group-complete-letters>       
+    </script>
+
+    <script type="text/ng-template" id="act3">
+    <group-complete-letters options="options" audio="A3" description="Completa las siguientes oraciones con letras mayúsculas o minúsculas teniendo en cuenta las reglas para el uso de mayúsculas. En los paréntesis encontrarás algunas pistas que te serán de ayuda." >  </group-complete-letters>       
+    </script>
+
+	<script type="text/ng-template" id="act4">
+        <group-inputs
+            options="data" 
+            description="Escribe en cada recuadro los nombres y apellidos de cinco integrantes de tu familia. No olvides usar las letras mayúsculas y compartir tus respuestas con el facilitador."
+            audio="A4">
+        </group-inputs>
+    </script>
+
+    <script type="text/ng-template" id="act5">
+		<complementary  options="options" audio="A5" description="Haz clic sobre el libro y visitarás una página web en la que podrás poner en práctica los conocimientos adquiridos en esta lección."></complementary>	
+	</script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

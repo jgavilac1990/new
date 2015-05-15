@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="soc202">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="soc" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="con1">
+		<click-images 
+			img="personaje-presentacion"
+			alt="Niño hablando sobre la definición del clima y algunos tipos"
+			options="data"
+			items-per-row="1"
+			title="¿Qué es el clima?"
+			description="El clima es el conjunto de características meteorológicas (temperaturas y precipitaciones) que se dan en una superficie muy extensa de la tierra durante un período largo de tiempo. Existen diferentes tipos de climas, los principales son:"
+			instruction="Haz clic sobre cada recuadro y descubre los principales tipos de clima."
+			audio="c1">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="con2">
+		<click-images 
+			options="data"
+			description="El clima cálido se caracteriza por presentar temperaturas altas, generando mucho calor. En las regiones que presentan este clima podemos encontrar áreas cubiertas con bosques tropicales, cultivos y también zonas dedicadas a la ganadería o la recreación."
+			instruction="Haz clic sobre cada imagen y descubre algunas actividades económicas de clima cálido."
+			audio="c2">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="con3">
+		<click-images 
+			options="data"
+			description="El clima templado presenta temperaturas menores a las que se presentan en clima cálido, por lo que es  un clima muy favorable para la vida de las personas. En nuestro país, las regiones con este clima generalmente presentan cultivos de aguacate, tomate y café, entre otros."
+			instruction="Haz clic sobre cada imagen y descubre algunas actividades económicas de clima templado."
+			audio="c3">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="con4">
+		<click-images 
+			options="data"
+			description="El clima frío se caracteriza por presentar temperaturas bajas, generando mucho frío. Las regiones con estos climas presentan cultivos de flores, fresas, moras, papa, entre otros. En los suelos de estas regiones también es posible encontrar áreas dedicadas a la actividad lechera."
+			instruction="Haz clic sobre cada imagen y descubre algunas actividades económicas de clima frío."
+			audio="c4">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="con5">
+		<click-images 
+			options="data"
+			title="¿Qué es el tiempo?"
+			description="El tiempo hace referencia a la situación de la atmósfera durante un período corto (un día o menos) en un espacio reducido de la tierra. Si llueve, la gente puede cultivar; pero si llueve demasiado los cultivos pueden morir, por lo que podemos decir que el tiempo también afecta las actividades económicas."
+			instruction="Haz clic sobre cada imagen y conoce el tiempo atmosférico."
+			audio="c5">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="con6">
+		<transclusion 
+			audio="c6"
+			description="Como has podido observar tanto el clima como el tiempo atmosférico, son factores importantes para el cultivo de los alimentos que consumimos a diario. La economía de las regiones dependen de su comercialización, por eso tener un clima estable es indispensable para lograr que los cultivos se puedan sembrar, recolectar y distribuir."
+			<!--INICIO-->
+			<div style="text-align: center">
+				<img style="display: inline-block" class="img-responsive" src="{{ $root.resources + '/nino-2.png' }}" 
+					alt="Imagen que muestra un joven hablando sobre la importancia del clima y el tiempo atmosférico">
+			</div>
+			<!--FIN-->
+		</transclusion>
+	</script>
+
+	<script type="text/ng-template" id="act1">
+		<click-images 
+			options="data"
+			description="¿Te has fijado que en tu región existen climas  y tiempos atmosféricos  diferentes y de eso dependen las actividades económicas que allí se desarrollan?"
+			instruction="Haz clic sobre cada una de las imágenes y descubre el clima favorable para cada actividad."
+			audio="a1">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="act2">
+		<click-images 
+			options="data"
+			items-per-row="3"
+			description="¿Te has fijado que existen climas y estados climáticos en donde los lugares turísticos  se benefician permitiendo el crecimiento económico y cultural de la región?"
+			instruction="Haz clic sobre cada una de las imágenes y descubre el clima de cada sitio turístico."
+			audio="a2">
+		</click-images>
+	</script>
+
+	<script type="text/ng-template" id="act3_1">
+		<one-group 
+			options="data" 
+			audio="a31"
+			description="Arrastra al recuadro las imágenes relacionadas con las  actividades económicas que se desarrollan en regiones con clima cálido."
+			title="Clima cálido">
+		</one-group>
+	</script>
+
+	<script type="text/ng-template" id="act3_2">
+		<one-group 
+			options="data" 
+			audio="a32"
+			description="Arrastra al recuadro las imágenes relacionadas con las  actividades económicas que se desarrollan en regiones con clima templado."
+			title="Clima templado">
+		</one-group>
+	</script>
+
+	<script type="text/ng-template" id="act3_3">
+		<one-group 
+			options="data" 
+			audio="a33"
+			description="Arrastra al recuadro las imágenes relacionadas con las  actividades económicas que se desarrollan en regiones con clima frío."
+			title="Clima frío">
+		</one-group>
+	</script>
+
+	<script type="text/ng-template" id="act4">
+		<pairs 
+			audio="a4"
+			options="options" description="Arrastra cada imagen de vestuario hacia la imagen del lugar o ciudad apropiado para usarlo.">
+			<item>
+				<img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + src1 + '.png', alt: alt1 }" >
+			</item>
+			<target>
+				<img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + src2 + '.jpg', alt: alt2, title: title }" >
+				<p data-bind="text: text"></p>
+			</target>
+		</pairs>
+	</script>
+
+	<script type="text/ng-template" id="act5">
+		<transclusion 
+			audio="a5"
+			description="Con la ayuda de tus padres investiga y escribe en el recuadro en blanco las principales actividades económicas que se desarrollan en la ciudad donde vives, luego comparte tu respuesta con el facilitador y tus compañeros."
+			<!--INICIO-->
+			<div class="text-center">
+				<input class="input-primary" type="text" style="display: inline-block; font-size: 100px; padding: 27px 28px;"
+					ng-model="$parent.input">
+			</div>
+
+			<!-- CALIFICATIONS -->
+			<div ng-show="success"> <div data-congratulations></div></div>
+			<div ng-show="failure"> <div data-failure></div> </div>
+			<!--FIN-->
+		</transclusion>
+	</script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+

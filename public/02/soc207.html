@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html class="no-js" lang="es" ng-app="soc207">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="../css/app.css">
+
+    <style>
+
+        .img-scale{
+            /*transition*/
+            -webkit-transition:all 0.4s;
+            -moz-transition:all 0.4s;
+            -o-transition:all 0.4s;
+            transition:all 0.4s;
+        }
+
+        .img-scale:hover{
+            /*transform*/
+            -webkit-transform:scale(1.5);
+            -moz-transform:scale(1.5);
+            -ms-transform:scale(1.5);
+            -o-transform:scale(1.5);
+            transform:scale(1.5);
+        }
+
+        .esp strong {
+            color: black;
+        }
+
+    </style>
+
+</head>
+<body>
+	<!--[if lt IE 8]>
+        <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+	<!-- Solo se cambia la clase según la actividad -->
+	<div id="container" class="soc" ng-include src="'../views/common/include.html'"></div>
+
+	<!--templates-->
+	<script type="text/ng-template" id="comp">
+		<competences-new 
+			options="data"	
+		></competences-new>
+	</script>
+
+    <script type="text/ng-template" id="con1">
+        <show-concepts-text 
+            options="data"
+            titletop="Nuestra historia"
+            description="Colombia para poder alcanzar su independencia tuvo que librar varias batallas y vivir diversos sucesos que cambiaron la vida de sus pobladores. A continuación te invitamos hacer un recorrido corto por la historia de nuestro país."
+            instruction="Haz clic sobre cada uno de los años y conoce los hechos importantes acontecidos en cada época."
+            audio="C1"
+            noplay="true"></show-concepts-text>
+    </script>
+
+     <script type="text/ng-template" id="con2">
+        <show-concepts-text 
+            options="data"
+            itemsperrow="1"
+            titletop="¿Quiénes lucharon por la independencia de Colombia?"
+            description="Simón Bolívar, Antonio Nariño, Francisco de Paula Santander, Policarpa Salavarrieta y José Antonio Galán, fueron algunos de los personajes que libraron batallas y perdieron sus vidas en la búsqueda de la libertad de Colombia. Éstos siempre lucharon para alcanzar un territorio donde se respetaran los derechos humanos y libre de las ordenes de los españoles. A continuación conocerás más sobre estos personajes."
+            instruction="Haz clic sobre cada uno de los recuadros y conoce más sobre la vida de los héroes de la patria."
+            audio="C2"
+            noplay="true"></show-concepts-text>
+    </script>
+
+    <script type="text/ng-template" id="act1">
+        <pairs options="options" audio="A1" description="Arrastra el nombre de cada personaje destacado dentro de la historia de Colombia, hacia la imagen donde está representado."custom-class='align-bottom' >
+            <item>
+                <h1 data-bind="html: sil"></h1>
+            </item>
+            <target>
+                <img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + resource + '.jpg', alt: alt , title: imgtitle}" ></img>
+            </target>
+        </pairs>
+    </script>
+
+    <script type="text/ng-template" id="act2">
+        <pairs options="options" audio="A2" description="Arrastra cada uno de los enunciados donde se describen algunos de los personajes destacados de la historia de Colombia, hacia la imagen donde están representados estos personajes."custom-class='align-bottom items-large-1' >
+            <item>
+                <h1 data-bind="html: sil"></h1>
+            </item>
+            <target>
+                <img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + resource + '.jpg', alt: alt , title: imgtitle}" ></img>
+            </target>
+        </pairs>
+    </script>
+
+    <script type="text/ng-template" id="act2-2">
+        <pairs options="options" audio="A2-2" description="Arrastra cada uno de los enunciados donde se describen algunos de los personajes destacados de la historia de Colombia, hacia la imagen donde están representados estos personajes."custom-class='align-bottom items-large-1' >
+            <item>
+                <h1 data-bind="html: sil"></h1>
+            </item>
+            <target>
+                <img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + resource + '.jpg', alt: alt , title: imgtitle}" ></img>
+            </target>
+        </pairs>
+    </script>
+
+    <script type="text/ng-template" id="act3">
+        <pairs options="options" audio="A3" description="Arrastra cada fecha hacia la imagen que representa el acontecimiento ocurrido en dicha fecha."custom-class='align-bottom' >
+            <item>
+                <h1 class="bg-1" style="width: 100%;color: white;" data-bind="html: sil"></h1>
+            </item>
+            <target>
+                <img class="img-responsive" data-bind="attr: { src: $root.resources + '/' + resource + '.png', alt: alt , title: imgtitle}" ></img>
+                <div class="col-md-12 bg-1" style="color: white;padding: 10px;display:  inline-block;" data-bind="text: title"></div>
+            </target>
+        </pairs>
+    </script>
+
+    <script type="text/ng-template" id="act4">
+        <letter-soup
+                audio="A4"
+                description="Busca en la sopa de letras los personajes indicados relacionados con la historia de Colombia. Recuerda que para seleccionarlos deberás hacer clic en la primera y última letra del nombre."
+                options="data">
+        </letter-soup>
+    </script>
+
+    <script type="text/ng-template" id="act5">
+        <write-true-false
+                audio="A5"
+                options="data"
+                description="Analiza con tus padres la veracidad de los siguientes enunciados. Luego, escribe en el recuadro en blanco una F si el enunciado es falso o una V si el enunciado es verdadero.">
+        </write-true-false>
+    </script>
+
+	<script src="../scripts/vendor.js"></script>
+	<script src="../scripts/app.js"></script>
+
+	<script>
+		// Requerido para activar el autoreload
+		window.brunch = window.brunch || {};
+	</script>
+
+</body>
+</html>
+
